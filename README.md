@@ -73,12 +73,6 @@ pry(main)> require './lib/dealership'
 pry(main)> dealership = Dealership.new("Acme Auto", "123 Main Street")
 #=> #<Dealership:0x00007fccd30375f8...>
 
-pry(main)> dealership.name
-#=> "Acme Auto"
-
-pry(main)> dealership.address
-#=> "123 Main Street"
-
 pry(main)> dealership.inventory
 #=> []
 
@@ -159,6 +153,8 @@ pry(main)> dealership.details
 
 Use TDD to update your `Dealership` class so that it responds to the following
 interaction pattern:
+
+* Car price should be from cheapest to most expensive.
 
 ```ruby
 pry(main)> require './lib/car'
