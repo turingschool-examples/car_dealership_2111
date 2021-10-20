@@ -50,4 +50,8 @@ class Dealership
     end
     return temp_arr.join(",").reverse
   end
+
+  def cars_sorted_by_price
+    sorted = @inventory.sort_by {|car| car.total_cost}
+  end
 end
