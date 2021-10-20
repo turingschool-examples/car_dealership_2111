@@ -25,4 +25,14 @@ class Dealership
     end
   end
 
+  def total_value
+    total = @inventory.map do |car|
+      car.total_cost
+    end
+
+    total = total.inject(:+)  # Instructor: is it possible to reach into the car
+                              # objects while using inject at the same time?
+
+  end
+
 end
