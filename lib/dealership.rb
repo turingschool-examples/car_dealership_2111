@@ -63,9 +63,7 @@ class Dealership
     end
   end
 
-
-
-
+  # Needed more time to do inventory_hash
 
 
 end
