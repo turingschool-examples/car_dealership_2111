@@ -52,7 +52,7 @@ class Dealership
   end
 
   def cars_sorted_by_price(inventory)
-    sorted = inventory.sort_by {|car| car.total_cost}    
+    sorted = inventory.sort_by {|car| car.total_cost}
   end
 
   def get_makes
@@ -71,7 +71,8 @@ class Dealership
     hash = Hash.new()
     #cycle through each make, sort by car price, and add to hash.
     makes.each do |make|
-      cars_by_make(make, @inventory)
+      hash[make] = cars_sorted_by_price(cars_by_make(make, @inventory))
     end
+    hash
   end
 end
