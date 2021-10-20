@@ -10,8 +10,16 @@ class Dealership
   end
 
   def add_car(car)
-    @inventory << car
-    @inventory_count = @inventory.length
+    @inventory << car # Shift argument into @inventory array
+    @inventory_count = @inventory.length # Refresh value of @inventory_count
+  end
+
+  def has_inventory?
+    if @inventory.length == 0
+      false
+    else
+      true
+    end
   end
 
 
