@@ -1,5 +1,7 @@
 class Dealership
 
+  attr_reader :name, :address, :inventory, :inventory_count
+
   def initialize(name, address)
     @name = name
     @address = address
@@ -11,4 +13,4 @@ class Dealership
 
 
 
-end 
+end
