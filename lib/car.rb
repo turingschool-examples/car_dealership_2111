@@ -6,7 +6,6 @@ class Car
     @monthly_payment = monthly_payment
     @loan_length = loan_length
     @make_model = make_model
-    # @make = []
     @color
   end
 
@@ -29,6 +28,4 @@ class Car
   def paint!(color)
     @color = color
   end
-
-
 end
