@@ -15,11 +15,21 @@ class Dealership
   end
 
   def has_inventory?
-    if @inventory.length == 0
+    if @inventory.length == 0 # Check if inventory has length of 0, return false if such, true otherwise
       false
     else
       true
     end
+  end
+
+  def cars_by_make(make_name)
+
+    @inventory.select do |car| # Search through array to find element's who's '.make' value == user input
+
+      car.make == make_name
+
+    end
+
   end
 
 
