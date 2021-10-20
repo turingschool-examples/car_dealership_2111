@@ -5,7 +5,7 @@ RSpec.describe Car do
   it 'exists' do
     car = Car.new("Ford Mustang", 1500, 36)
 
-    expect(car).to be_a Car
+    expect(car).to be_an_instance_of(Car)
   end
 
   it 'has a make' do
@@ -36,5 +36,16 @@ RSpec.describe Car do
     car = Car.new("Ford Mustang", 1500, 36)
 
     expect(car.total_cost).to eq(54000)
+  end
+
+  it "shows color as nil" do
+    car = Car.new("Ford Mustang", 1500, 36)
+    expect(car.color).to eq(nil)
+  end
+
+  it "checks that the car is now blue" do
+    car = Car.new("Ford Mustang", 1500, 36)
+    car.paint!(:blue)
+    expect(car.color).to eq(:blue)
   end
 end
