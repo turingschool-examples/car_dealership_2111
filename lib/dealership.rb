@@ -32,4 +32,8 @@ class Dealership
   def cars_sorted_by_price
     sorted_cars = @inventory.sort_by {|car| car.total_cost}
   end
+
+  def inventory_hash
+    inventory.group_by {|car| car.make}
+  end
 end
