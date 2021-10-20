@@ -33,11 +33,30 @@ class Dealership
     total_cost_of_cars
   end
 
+  def cars_sorted_by_price
+    sorted_cars = @inventory.sort_by do |car|
+      car.total_cost
+    end
+    sorted_cars
+  end
+
+  def average_price_of_car
+    total_value / @inventory.count
+  end
+
   def details
     dealership_details = {}
     dealership_details["total_value"] = total_value
     dealership_details["address"] = @address
     dealership_details
-  end 
+  end
+
+  def inventory_hash
+    dealership_hash = {}
+    @inventory.select do |car|
+      dealership_hash[car.make[car.make]] = car
+    end
+    dealership_hash
+  end
 
 end
