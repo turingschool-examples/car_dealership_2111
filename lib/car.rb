@@ -1,4 +1,4 @@
-def Car
+class Car
   attr_accessor :make_and_model, :monthly_payment, :loan_length
 
   def initialize(make_and_model, monthly_payment, loan_length)
@@ -8,15 +8,15 @@ def Car
   end
 
   def make
-    @make
+    @make_and_model.split.first
   end
 
   def model
-    @model
+    @make_and_model.split.last
   end
 
-  def make_and_model
-    @make
-    @model
+  def total_cost
+    @monthly_payment * @loan_length
   end
+
 end
