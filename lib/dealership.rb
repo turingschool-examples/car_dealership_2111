@@ -59,20 +59,28 @@ class Dealership
     sorted = @inventory.sort_by {|car| car.total_cost}
   end
 
-  def inventory_hash # So ugly, iterates through @inventory like 3 times, can clean up, but out of time.
+  def inventory_hash
+    # Refactored just in time!!
     inventory_hash = Hash.new
-    car_makes = []
-
     @inventory.each do |car|
-      car_makes << car.make
+      inventory_hash[car.make] = cars_by_make(car.make).map{|car| car}
     end
-
-    no_duplicates = car_makes.uniq
-
-    no_duplicates.each do |make|
-      inventory_hash[make] = cars_by_make(make).map{|car| car}
-    end
-
     inventory_hash
+
+    # inventory_hash = Hash.new
+    # car_makes = []
+    #
+    # @inventory.each do |car|
+    #   car_makes << car.make
+    # end
+    #
+    # no_duplicates = car_makes.uniq
+    #
+    # no_duplicates.each do |make|
+    #   inventory_hash[make] = cars_by_make(make).map{|car| car}
+    # end
+    #
+    # inventory_hash
+
   end
 end
