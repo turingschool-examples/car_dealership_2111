@@ -34,4 +34,10 @@ describe Dealership do
      dealership.add_car(car_2)
      expect(dealership.inventory_count).to eq(2)
    end
+
+   it 'show has_inventory returns false if empty' do
+     dealership = Dealership.new("Acme Auto", "123 Main Street")
+
+     expect(dealership.has_inventory?).to eq(false)
+   end
 end
