@@ -31,6 +31,7 @@ RSpec.describe Dealership do
       expect(@dealership.inventory_count).to eq(2)
     end
   end
+
   describe '#has_inventory?' do
     it 'boolean returns for having inventory' do
       expect(@dealership.has_inventory?).to be(false)
@@ -41,6 +42,7 @@ RSpec.describe Dealership do
       expect(@dealership.has_inventory?).to be(true)
     end
   end
+
   describe '#cars_by_make' do
     it 'returns the cars of a specific make' do
       @dealership.add_car(@car_1)
@@ -62,6 +64,32 @@ RSpec.describe Dealership do
       @dealership.add_car(@car_4)
 
       expect(@dealership.average_price_of_car).to eq("39,000")
+    end
+  end
+
+  describe '#cars_sorted_by_price' do
+    it 'sorts cars by increasing value' do
+      @dealership.add_car(@car_1)
+      @dealership.add_car(@car_2)
+      @dealership.add_car(@car_3)
+      @dealership.add_car(@car_4)
+
+      expect(@dealership.cars_sorted_by_price).to eq([@car_3, @car_4, @car_2, @car_1])
+    end
+  end
+
+  describe '#inventory_hash' do
+    it 'groups cars by the make' do
+      @dealership.add_car(@car_1)
+      @dealership.add_car(@car_2)
+      @dealership.add_car(@car_3)
+      @dealership.add_car(@car_4)
+
+      expect(@dealership.cars_sorted_by_price).to eq({
+        "Ford" => [@car_1],
+        "Toyota" => [@car_2, @car_3],
+        "Chevrolet" => [@car_4]
+        })
     end
   end
 end
