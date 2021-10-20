@@ -57,6 +57,12 @@ class Dealership
       # Note: Not sure how to get this to return as string with a comma in the appropriate location (yet)
   end
 
+  def cars_sorted_by_price
+    @inventory.sort_by do |car| # Return an array which is sorted in ascending based off an element's total_cost size
+      car.total_cost
+    end
+  end
+
 
 
 
