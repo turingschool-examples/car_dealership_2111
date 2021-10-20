@@ -5,6 +5,8 @@ class Car
     @make_model = make_model
     @monthly_payment = monthly_payment
     @loan_length = loan_length
+    @make_model = make_model
+    # @make = []
   end
 
   def make
@@ -12,4 +14,12 @@ class Car
     make = @make_model.split(" ")
     make[0]
   end
+
+  def model
+    model = []
+    model = @make_model.split(" ")
+    model[1]
+  end
+
+
 end
