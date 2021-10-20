@@ -36,4 +36,18 @@ class Dealership
   def details
     {"total_value" => total_value,"address" => @address}
   end
+
+  def average_price_of_car
+    avg_cost = 0
+    if inventory_count > 0
+      avg_cost = total_value/inventory_count
+    end
+    text_avg_cost = avg_cost.to_s
+    arr_avg_cost = text_avg_cost.chars.to_a
+    temp_arr = []
+    arr_avg_cost.reverse.each_slice(3) do |chars|
+      temp_arr << chars.join()
+    end
+    return temp_arr.join(",").reverse
+  end
 end

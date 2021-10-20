@@ -83,7 +83,7 @@ describe Dealership do
   end
 
   describe ' #average_price_of_car' do
-    it 'retursnt he average price of cars in inventory' do
+    it 'returns the average price of cars in inventory' do
       expect(@dealership.average_price_of_car).to eq("39,000")
     end
   end
