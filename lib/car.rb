@@ -23,4 +23,8 @@ class Car
   def loan_length
     @loan_length
   end
+
+  def total_cost
+    @payment * @loan_length
+  end
 end
