@@ -6,6 +6,7 @@ class Car
     @loan_length = loan_length
     @make = @holder[0] # Make is first element in holder array
     @model = @holder[1] # Model is second element in holder array
+    @color = nil
   end
 
   def make # Return @make value
@@ -27,4 +28,13 @@ class Car
   def total_cost
     @payment * @loan_length
   end
+
+  def color
+    @color
+  end
+
+  def paint!(color_arg)
+    @color = color_arg
+  end
+
 end
