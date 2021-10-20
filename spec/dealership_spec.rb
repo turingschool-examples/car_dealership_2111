@@ -35,4 +35,19 @@ RSpec.describe Dealership do
     expect(dealership.inventory).to eq(expected_array)
     expect(dealership.inventory_count).to eq(2)
   end
+
+  it 'can check if it has inventory (bool)' do
+    dealership = Dealership.new("Acme Auto", "123 Main Street")
+
+    expect(dealership.has_inventory?).to eq false
+  end
+
+  it 'can check if it has inventory (bool) (with inventory)' do
+    dealership = Dealership.new("Acme Auto", "123 Main Street")
+    car_1 = Car.new("Ford Mustang", 1500, 36)
+    dealership.add_car(car_1)
+
+    expect(dealership.has_inventory?).to eq true
+
+  end
 end
