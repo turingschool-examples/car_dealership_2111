@@ -15,7 +15,7 @@ class Dealership
     @inventory.size
   end
 
-  def cars_by_make(make) # look at how to refactor this without the if statement
+  def cars_by_make(make) # try to refactor without if statement if time.
     car_match = []
     @inventory.find_all do |car|
       if car.make == make
@@ -39,5 +39,10 @@ class Dealership
     dealership_details["address"] = @address
     dealership_details
   end
+
+  def average_price_of_car
+    average = (total_value / @inventory.size).to_s
+  end
+
 
 end
