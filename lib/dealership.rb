@@ -28,4 +28,8 @@ class Dealership
   def average_price_of_car
     (@inventory_value/inventory_count).to_s.insert(2, ',')
   end
+
+  def cars_sorted_by_price
+    sorted_cars = @inventory.sort_by {|car| car.total_cost}
+  end
 end
