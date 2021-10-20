@@ -24,6 +24,19 @@ describe Dealership do
       expect(dealership.inventory).to eq([])
       dealership.add_car(@car_1)
       expect(dealership.inventory).to eq([@car_1])
+      dealership.add_car(@car_2)
+      expect(dealership.inventory).to eq([@car_1, @car_2])
+    end
+  end
+
+  describe ' #inventory_count' do
+    it 'counts the inventory' do
+      dealership = Dealership.new("Acme Auto", "123 Main Street")
+      expect(dealership.inventory_count).to eq(0)
+      dealership.add_car(@car_1)
+      expect(dealership.inventory_count).to eq(1
+      dealership.add_car(@car_2)
+      expect(dealership.inventory_count).to eq(2)
     end
   end
 
