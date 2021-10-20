@@ -95,8 +95,14 @@ describe Dealership do
   end
 
   describe ' #inventory_hash' do
-    it 'returns a hash where each key is a make, and each value is an array of the associated cars' do
+    xit 'returns a hash where each key is a make, and each value is an array of the associated cars' do
       expect(@dealership.inventory_hash).to eq({"Ford" => [@car_1], "Toyota" => [@car_2, @car_3], "Cheverolet" => [@car_4, @car_5]})
+    end
+  end
+
+  describe ' #get_makes' do
+    it 'returns array of all makes' do
+      expect(@dealership.get_makes).to eq(["Chevrolet","Ford", "Toyota"])
     end
   end
 end
