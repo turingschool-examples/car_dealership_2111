@@ -85,7 +85,7 @@ RSpec.describe Dealership do
       @dealership.add_car(@car_3)
       @dealership.add_car(@car_4)
 
-      expect(@dealership.cars_sorted_by_price).to eq({
+      expect(@dealership.inventory_hash).to eq({
         "Ford" => [@car_1],
         "Toyota" => [@car_2, @car_3],
         "Chevrolet" => [@car_4]
