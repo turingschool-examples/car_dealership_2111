@@ -45,4 +45,34 @@ class Dealership
     }
   end
 
+  def average_price_of_car
+    average_cost = total_value / inventory_count
+    format_number(average_cost)
+  end
+
+  def format_number(number)
+    group_nums = number.to_s.chars.to_a.reverse.each_slice(3) #
+    group_nums.map(&:join).join(',').reverse
+  end
+
+  def cars_sorted_by_price
+    sorted = @inventory.sort_by {|car| car.total_cost}
+  end
+
+  def inventory_hash # So ugly, iterates through @inventory like 3 times, can clean up, but out of time.
+    inventory_hash = Hash.new
+    car_makes = []
+
+    @inventory.each do |car|
+      car_makes << car.make
+    end
+
+    no_duplicates = car_makes.uniq
+
+    no_duplicates.each do |make|
+      inventory_hash[make] = cars_by_make(make).map{|car| car}
+    end
+
+    inventory_hash
+  end
 end

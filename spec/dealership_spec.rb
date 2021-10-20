@@ -84,4 +84,30 @@ RSpec.describe Dealership do
       expect(@dealership.details).to eq ({"total_value" => 156000, "address" => "123 Main Street"})
     end
   end
+
+  describe '#average_price_of_car' do
+    it 'divides total value by number of cars' do
+      expect(@dealership.average_price_of_car).to eq "39,000"
+    end
+  end
+
+  describe '#format_number' do
+    it 'separates numbers into groups of three and rejoins with comma as string' do
+      expect(@dealership.format_number(154987)).to eq "154,987"
+    end
+  end
+
+  describe '#cars_sorted_by_price' do
+    it 'sorts cars cheapest to most expensive' do
+      expect(@dealership.cars_sorted_by_price).to eq([@car_3, @car_4, @car_2, @car_1])
+    end
+  end
+
+  describe '#inventory_hash' do
+    it 'returns hash with make as key and array of cars as value' do
+      expect(@dealership.inventory_hash).to be_a Hash
+
+      expect(@dealership.inventory_hash).to eq({"Ford"=>[@car_1], "Toyota"=>[@car_2, @car_3], "Chevrolet"=>[@car_4]})
+    end
+  end
 end
