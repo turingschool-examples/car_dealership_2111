@@ -90,7 +90,7 @@ describe Dealership do
 
   describe ' #cars_sorted_by_price' do
     it 'returns the inventory sorted by price' do
-      expect(@dealership.cars_sorted_by_price).to eq([@car_3, @car_4, @car_2, @car_1])
+      expect(@dealership.cars_sorted_by_price(@dealership.inventory)).to eq([@car_3, @car_4, @car_2, @car_1])
     end
   end
 

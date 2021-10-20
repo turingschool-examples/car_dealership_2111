@@ -51,8 +51,8 @@ class Dealership
     return temp_arr.join(",").reverse
   end
 
-  def cars_sorted_by_price
-    sorted = @inventory.sort_by {|car| car.total_cost}
+  def cars_sorted_by_price(inventory)
+    sorted = inventory.sort_by {|car| car.total_cost}    
   end
 
   def get_makes
@@ -65,13 +65,13 @@ class Dealership
     return makes.sort
   end
 
-  # def inventory_hash
-  #   # gather all makes
-  #   makes = get_makes
-  #   hash = Hash.new()
-  #   #cycle through each make, sort by car price, and add to hash.
-  #   makes.each do |make|
-  #     @inventory.cars_by_make(make).sort
-  #   end
-  # end
+  def inventory_hash
+    # gather all makes
+    makes = get_makes
+    hash = Hash.new()
+    #cycle through each make, sort by car price, and add to hash.
+    makes.each do |make|
+      cars_by_make(make, @inventory)
+    end
+  end
 end
