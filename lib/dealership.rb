@@ -35,4 +35,20 @@ class Dealership
     details["address"] = @address
     details
   end
+
+  def average_price_of_car
+    (total_value/inventory_count).to_s.insert(2, ",")
+  end
+
+  def cars_sorted_by_price
+    @inventory.sort_by do |car|
+      car.total_cost
+    end
+  end
+
+  def inventory_hash
+    @inventory.group_by do |car|
+      car.make
+    end
+  end
 end
