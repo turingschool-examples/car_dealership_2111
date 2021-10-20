@@ -93,4 +93,10 @@ describe Dealership do
       expect(@dealership.cars_sorted_by_price).to eq([@car_3, @car_4, @car_2, @car_1])
     end
   end
+
+  describe ' #inventory_hash' do
+    it 'returns a hash where each key is a make, and each value is an array of the associated cars' do
+      expect(@dealership.inventory_hash).to eq({"Ford" => [@car_1], "Toyota" => [@car_2, @car_3], "Cheverolet" => [@car_4, @car_5]})
+    end
+  end
 end
