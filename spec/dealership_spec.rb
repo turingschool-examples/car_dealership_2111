@@ -77,4 +77,15 @@ describe Dealership do
     end
   end
 
+  describe ' #deatils' do
+    it 'returns a hash with total value and address' do
+      dealership = Dealership.new("Acme Auto", "123 Main Street")
+      dealership.add_car(@car_1)
+      dealership.add_car(@car_2)
+      dealership.add_car(@car_3)
+      dealership.add_car(@car_4)
+      expect(@dealership.details["total_value"]).to eq(156000)
+      expect(@dealership.details["address"]).to eq("123 Main Street")
+    end
+  end
 end
