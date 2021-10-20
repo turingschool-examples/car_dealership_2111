@@ -43,4 +43,15 @@ class Dealership
       "address" => self.address
     }
   end
+
+  def average_price_of_car
+    (self.total_value / @inventory.length).to_s
+  end
+
+  def cars_sorted_by_price
+    @inventory.sort_by do |car|
+      car.total_cost
+    end
+  end
+
 end

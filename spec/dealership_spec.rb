@@ -95,7 +95,28 @@ RSpec.describe Dealership do
   end
 
 
+  describe '#average_price_of_car' do
+    it 'returns correct average price of a car' do
+      @dealership.add_car(@car_1)
+      @dealership.add_car(@car_2)
+      @dealership.add_car(@car_3)
+      @dealership.add_car(@car_4)
+
+      expect(@dealership.average_price_of_car).to eq('49500')
+    end
+  end
 
 
+
+  describe '#cars_sorted_by_price' do
+    it 'returns an array of cars sorted by price' do
+      @dealership.add_car(@car_1) # 54000
+      @dealership.add_car(@car_2) # 48000
+      @dealership.add_car(@car_3) # 24000
+      @dealership.add_car(@car_4) # 72000
+
+      expect(@dealership.cars_sorted_by_price).to eq([@car_3, @car_2, @car_1, @car_4])
+    end
+  end
 
 end
