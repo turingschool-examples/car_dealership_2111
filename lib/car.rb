@@ -5,10 +5,10 @@ class Car
               :make,
               :color
   def initialize(model, monthly_payment, loan_length)
-    @model           = model[5..11]
+    @model           = model.split(/\W+/).last
     @monthly_payment = monthly_payment
     @loan_length     = loan_length
-    @make            = model[0..3]
+    @make            = model.split(/\W+/).first
     @color           = nil
   end
 
@@ -18,6 +18,6 @@ class Car
 
   def paint!(color)
     @color = color
-  end 
+  end
 
 end
