@@ -3,12 +3,12 @@ require 'pry'
 require './lib/car'
 require './lib/dealership'
 
-Rspec.configure do |config|
+RSpec.configure do |config|
   config.default_formatter = 'doc'
   config.mock_with :mocha
 end
 
-Rspec.describe 'dealership Spec Harness' do
+RSpec.describe 'dealership Spec Harness' do
   before(:each) do
     @dealership = Dealership.new("Acme Auto", "123 Main Street")
     @car_1 = Car.new("Ford Mustang", 1500, 36)
