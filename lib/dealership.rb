@@ -1,11 +1,10 @@
 class Dealership
-  attr_accessor :inventory, :inventory_count
+  attr_accessor :inventory, :inventory_count, :details
 
   def initialize(dealership, address)
     @dealership = dealership
     @address = address
     @inventory = []
-    # @inventory_count = @inventory.size # why can't I do this?
   end
 
   def add_car(car)
@@ -32,7 +31,13 @@ class Dealership
 
     total = total.inject(:+)  # Instructor: is it possible to reach into the car
                               # objects while using inject at the same time?
+  end
 
+  def details
+    dealership_details = {}
+    dealership_details["total_value"] = total_value
+    dealership_details["address"] = @address
+    dealership_details
   end
 
 end
