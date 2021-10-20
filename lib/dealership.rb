@@ -1,4 +1,4 @@
-#
+# require './lib/car'
 #
 #
 #
@@ -11,6 +11,7 @@ class Dealership
     @address = address
     @inventory = []
     @total_val = 0
+    @inv_by_cost = []
   end
 
   def inventory_count
@@ -46,4 +47,22 @@ class Dealership
       "address" => @address
     }
   end
+
+  def average_price_of_car
+    average = @total_val / @inventory.count
+    average.to_s #don't know how to insert comma and need to move on
+  end
+
+  # def cars_sorted_by_price
+  #   @inventory.max_by do |car|
+  #     @inv_by_cost << car.total_cost
+  #   end
+  #   @inv_by_cost
+  # end
+
+  # def inventory_hash
+  #   inv_hash = {
+  #
+  #   }
+  # end
 end
