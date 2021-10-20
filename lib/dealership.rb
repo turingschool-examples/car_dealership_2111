@@ -30,4 +30,8 @@ class Dealership
       car.total_cost
     end.sum
   end
+
+  def average_price_of_car
+    (total_value / inventory.size).to_s.insert(-4, ",")
+  end
 end
