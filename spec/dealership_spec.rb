@@ -54,38 +54,36 @@ describe Dealership do
     end
   end
 
+  before(:each)do
+    @dealership = Dealership.new("Acme Auto", "123 Main Street")
+    @dealership.add_car(@car_1)
+    @dealership.add_car(@car_2)
+    @dealership.add_car(@car_3)
+    @dealership.add_car(@car_4)
+  end
+
   describe ' #cars_by_make' do
     it 'returns only cars of specified make from inventory' do
-      dealership = Dealership.new("Acme Auto", "123 Main Street")
-      dealership.add_car(@car_1)
-      dealership.add_car(@car_2)
-      dealership.add_car(@car_3)
-      dealership.add_car(@car_4)
-      expect(dealership.cars_by_make("Toyota")).to eq([@car_2, @car_3])
-      expect(dealership.cars_by_make("Ford")).to eq([@car_1])
+      expect(@dealership.cars_by_make("Toyota")).to eq([@car_2, @car_3])
+      expect(@dealership.cars_by_make("Ford")).to eq([@car_1])
     end
   end
 
   describe ' #total_value' do
     it 'returns the total value of slected inventory' do
-      dealership = Dealership.new("Acme Auto", "123 Main Street")
-      dealership.add_car(@car_1)
-      dealership.add_car(@car_2)
-      dealership.add_car(@car_3)
-      dealership.add_car(@car_4)
-      expect(dealership.total_value).to eq(156000)
+      expect(@dealership.total_value).to eq(156000)
     end
   end
 
   describe ' #details' do
     it 'returns a hash with total value and address' do
-      dealership = Dealership.new("Acme Auto", "123 Main Street")
-      dealership.add_car(@car_1)
-      dealership.add_car(@car_2)
-      dealership.add_car(@car_3)
-      dealership.add_car(@car_4)
-      expect(dealership.details["total_value"]).to eq(156000)
-      expect(dealership.details["address"]).to eq("123 Main Street")
+      expect(@dealership.details["total_value"]).to eq(156000)
+      expect(@dealership.details["address"]).to eq("123 Main Street")
+    end
+  end
+
+  describe ' #average_price_of_car' do
+    it '' do
     end
   end
 end
