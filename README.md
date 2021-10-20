@@ -107,7 +107,7 @@ interaction pattern:
 pry(main)> require './lib/car'
 #=> true
 
-pry(main)> require './lib/dealership
+pry(main)> require './lib/dealership'
 #=> true
 
 pry(main)> dealership = Dealership.new("Acme Auto", "123 Main Street")
