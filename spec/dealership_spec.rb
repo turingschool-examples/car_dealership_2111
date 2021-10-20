@@ -66,4 +66,15 @@ describe Dealership do
     end
   end
 
+  describe ' #total_value' do
+    it 'returns the total value of slected inventory' do
+      dealership = Dealership.new("Acme Auto", "123 Main Street")
+      dealership.add_car(@car_1)
+      dealership.add_car(@car_2)
+      dealership.add_car(@car_3)
+      dealership.add_car(@car_4)
+      expect(dealership.total_value).to eq(156000)
+    end
+  end
+
 end
