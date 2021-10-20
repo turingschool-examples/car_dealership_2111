@@ -27,6 +27,7 @@ class Dealership
 
   def details
     dealership = {
+      'dealership_name' => @name,
       'total_value' => @total_value,
       'address' => @address
     }
