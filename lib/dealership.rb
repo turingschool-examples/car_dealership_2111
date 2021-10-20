@@ -42,5 +42,28 @@ class Dealership
       "address" => @address}
   end
 
+  def average_price_of_car
+    average_price = total_value / @inventory.count
+    average_price.to_s.reverse.scan(/\d{3}|.+/).join(",").reverse
+  end
 
+  def cars_sorted_by_price
+    @inventory.sort_by do |car|
+      car.monthly_payment * car.loan_length
+    end
+  end
+
+  def inventory_hash
+    inventory_hash = {}
+    car_array = []
+    @inventory.map do |car|
+      inventory_hash[car.make] = car_array.uniq << car
+    end
+    inventory_hash
+  end
 end
+
+
+
+
+
