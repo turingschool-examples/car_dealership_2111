@@ -32,7 +32,7 @@ RSpec.describe Car do
     expect(car.loan_length).to eq(36)
   end
 
-  xit 'has a total cost' do
+  it 'has a total cost' do
     car = Car.new("Ford Mustang", 1500, 36)
 
     expect(car.total_cost).to eq(54000)
