@@ -38,6 +38,7 @@ RSpec.describe Car do
     expect(car.total_cost).to eq(54000)
   end
 
+#Iteration 1 Additional Testing
   it 'has no color but we can paint it' do
     car = Car.new("Ford Mustang", 1500, 36)
 
