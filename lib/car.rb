@@ -19,4 +19,8 @@ class Car
   def monthly_payment # Return @payment value
     @payment
   end
+
+  def loan_length
+    @loan_length
+  end
 end
