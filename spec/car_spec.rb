@@ -37,4 +37,18 @@ RSpec.describe Car do
 
     expect(car.total_cost).to eq(54000)
   end
+
+  it "is not painted by default" do
+    car = Car.new("Ford Mustang", 1500, 36)
+
+    expect(car.color).to eq nil
+  end
+
+  it "can be painted and color can be permanently updated" do
+    car = Car.new("Ford Mustang", 1500, 36)
+
+    car.paint!(:blue)
+
+    expect(car.color).to eq(:blue)
+  end
 end
