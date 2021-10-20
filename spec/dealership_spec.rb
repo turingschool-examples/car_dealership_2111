@@ -62,4 +62,39 @@ RSpec.describe Dealership do
 
     expect(@dealership.details).to eq({"total_value" => 156000, "address" => "123 Main Street"})
   end
+  it '#average_price_of_car' do
+    @dealership.add_car(@car_1)
+    @dealership.add_car(@car_2)
+    @dealership.add_car(@car_3)
+    @dealership.add_car(@car_4)
+
+    expect(@dealership.average_price_of_car).to eq("39,000")
+  end
+
+  it 'cars_sorted_by_price' do
+    @dealership.add_car(@car_1)
+    @dealership.add_car(@car_2)
+    @dealership.add_car(@car_3)
+    @dealership.add_car(@car_4)
+
+    expect(@dealership.cars_sorted_by_price).to eq([@car_3, @car_4, @car_2, @car_1])
+  end
+
+  it '#cars_in_category' do
+    @dealership.add_car(@car_1)
+    @dealership.add_car(@car_2)
+    @dealership.add_car(@car_3)
+    @dealership.add_car(@car_4)
+
+    expect(@dealership.cars_in_categoty('Toyota')).to eq([@car_2, @car_3])
+  end
+
+  it '#inventory_hash' do
+    @dealership.add_car(@car_1)
+    @dealership.add_car(@car_2)
+    @dealership.add_car(@car_3)
+    @dealership.add_car(@car_4)
+
+    expect(@dealership.inventory_hash).to eq({"Ford" => [@car_1], "Toyota" => [@car_2, @car_3], "Chevrolet"=> [@car_4]})
+  end
 end
