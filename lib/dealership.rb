@@ -51,6 +51,12 @@ class Dealership
     }
   end
 
+  def average_price_of_car
+
+    self.total_value / @inventory.count # Divide total value by total amount of cars
+      # Note: Not sure how to get this to return as string with a comma in the appropriate location (yet)
+  end
+
 
 
 
