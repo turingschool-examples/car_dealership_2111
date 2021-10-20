@@ -1,3 +1,4 @@
+#Begin Iteration 2
 require './lib/car'
 require './lib/dealership'
 
@@ -32,6 +33,7 @@ RSpec.describe Dealership do
     end
   end
 
+  #Begin Iteration 3
   describe '#has_inventory?' do
     it 'boolean returns for having inventory' do
       expect(@dealership.has_inventory?).to be(false)
@@ -52,6 +54,28 @@ RSpec.describe Dealership do
 
       expect(@dealership.cars_by_make('Toyota')).to eq([@car_2, @car_3])
       expect(@dealership.cars_by_make('Ford')).to eq([@car_1])
+    end
+  end
+
+  describe '#total_value' do
+    it 'returns the value of the whole inventory' do
+      @dealership.add_car(@car_1)
+      @dealership.add_car(@car_2)
+      @dealership.add_car(@car_3)
+      @dealership.add_car(@car_4)
+
+      expect(@dealership.total_value).to eq(156000)
+    end
+  end
+
+  describe '#details' do
+    it 'returns the dealerships details' do
+      @dealership.add_car(@car_1)
+      @dealership.add_car(@car_2)
+      @dealership.add_car(@car_3)
+      @dealership.add_car(@car_4)
+
+      expect(@dealership.details).to eq({'total_value' => 156000, 'address' => "123 Main Street"})
     end
   end
 
