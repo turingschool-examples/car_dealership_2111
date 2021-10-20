@@ -20,7 +20,7 @@ describe Dealership do
   end
 
   describe ' #add_car' do
-    xit 'adds a car to inventory' do
+    it 'adds a car to inventory' do
       dealership = Dealership.new("Acme Auto", "123 Main Street")
       expect(dealership.inventory).to eq([])
       dealership.add_car(@car_1)
@@ -31,7 +31,7 @@ describe Dealership do
   end
 
   describe ' #inventory_count' do
-    xit 'counts the inventory' do
+    it 'counts the inventory' do
       dealership = Dealership.new("Acme Auto", "123 Main Street")
       expect(dealership.inventory_count).to eq(0)
       dealership.add_car(@car_1)
