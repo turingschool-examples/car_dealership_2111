@@ -10,7 +10,6 @@ end
 
 RSpec.describe 'dealership Spec Harness' do
   before(:each) do
-    @dealership = Dealership.new("Acme Auto", "123 Main Street")
     @car_1 = Car.new("Ford Mustang", 1500, 36)
     @car_2 = Car.new("Toyota Prius", 1000, 48)
     @car_3 = Car.new("Toyota Tercel", 500, 48)
@@ -49,6 +48,10 @@ RSpec.describe 'dealership Spec Harness' do
   end
 
   describe 'Iteration 2' do
+    before(:each) do
+      @dealership = Dealership.new("Acme Auto", "123 Main Street")
+    end
+
     it "5. Dealership Creation" do
       expect(Dealership).to respond_to(:new).with(2).argument
       expect(@dealership).to be_an_instance_of(Dealership)
@@ -69,6 +72,7 @@ RSpec.describe 'dealership Spec Harness' do
 
   describe 'Iteration 3' do
     before(:each) do
+      @dealership = Dealership.new("Acme Auto", "123 Main Street")
       @dealership.add_car(@car_1)
       @dealership.add_car(@car_2)
       @dealership.add_car(@car_3)
@@ -97,6 +101,14 @@ RSpec.describe 'dealership Spec Harness' do
   end
 
   describe "Iteration 4" do
+    before(:each) do
+      @dealership = Dealership.new("Acme Auto", "123 Main Street")
+      @dealership.add_car(@car_1)
+      @dealership.add_car(@car_2)
+      @dealership.add_car(@car_3)
+      @dealership.add_car(@car_4)
+    end
+    
     it "10. Dealership #average_price_of_car" do
       expect(@dealership).to respond_to(:average_price_of_car).with(0).argument
       expect(@dealership.average_price_of_car).to eq("39,000")
