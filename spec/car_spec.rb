@@ -1,5 +1,6 @@
 require 'rspec'
 require './lib/car'
+require 'pry'
 
 RSpec.describe Car do
   it 'exists' do
@@ -35,6 +36,8 @@ RSpec.describe Car do
   it 'has a total cost' do
     car = Car.new("Ford Mustang", 1500, 36)
 
+    # binding.pry
     expect(car.total_cost).to eq(54000)
   end
+
 end
