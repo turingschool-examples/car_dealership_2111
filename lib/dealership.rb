@@ -1,9 +1,13 @@
 class Dealership
 
-  attr_reader :inventory,
+  attr_reader :name,
+              :address,
+              :inventory,
               :inventory_count
 
   def initialize(name, address)
+    @name = name
+    @address = address
     @inventory = []
     @inventory_count = 0
   end
@@ -29,5 +33,12 @@ class Dealership
       value += car.total_cost
     end
   value
+  end
+
+  def details
+    details = Hash.new
+    details.store("total_value",total_value)
+    details.store("address", address)
+    details
   end
 end
