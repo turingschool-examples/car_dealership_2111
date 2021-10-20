@@ -9,50 +9,6 @@
 * Submit a pull request from your repository to the turingschool-examples repository
 * Make sure to put your name in your PR!
 
-## Iteration 1
-
-Start with the existing tests, and then use TDD to create a `Car` class that
-responds to the following interaction pattern:
-
-(Where you see something like `#<Car:0x00007fccd30375f8...>`, this is
-shorthand for a full car object with that object identifier - we have
-replaced any attributes with `...` for readability.)
-
-Notes: Loan length is in month, and the total cost is the loan length
-multiplied by the monthly payment.
-
-```ruby
-pry(main)> require './lib/car'
-#=> true
-
-pry(main)> car = Car.new("Ford Mustang", 1500, 36)
-#=> #<Car:0x00007fa53b9ca0a8...>
-
-pry(main)> car.make
-#=> "Ford"
-
-pry(main)> car.model
-#=> "Mustang"
-
-pry(main)> car.monthly_payment
-#=> 1500
-
-pry(main)> car.loan_length
-#=> 36
-
-pry(main)> car.total_cost
-#=> 54000
-
-pry(main)> car.color
-#=> nil
-
-pry(main)> car.paint!(:blue)
-
-pry(main)> car.color
-#=> :blue
-
-```
-
 ## Iteration 2
 
 Use TDD to create a `Dealership` class that responds to the following interaction
@@ -80,17 +36,17 @@ pry(main)> dealership.inventory_count
 #=> 0
 
 pry(main)> car_1 = Car.new("Ford Mustang", 1500, 36)
-#=> #<Car:0x00007fa53b9ca0a8...>
+#=> #<"Ford Mustang">
 
 pry(main)> car_2 = Car.new("Toyota Prius", 1000, 48)
-#=> #<Car:0x00007fccd2985f48...>
+#=> #<"Toyota Prius">
 
 pry(main)> dealership.add_car(car_1)
 
 pry(main)> dealership.add_car(car_2)
 
 pry(main)> dealership.inventory
-#=> [#<Car:0x00007fa53b9ca0a8...>, #<Car:0x00007fccd2985f48...>]
+#=> [#<"Ford Mustang">, #<"Toyota Prius">]
 
 pry(main)> dealership.inventory_count
 #=> 2
@@ -120,7 +76,7 @@ pry(main)> car_1 = Car.new("Ford Mustang", 1500, 36)
 #=> #<Car:0x00007fccd29b5720...>
 
 pry(main)> car_2 = Car.new("Toyota Prius", 1000, 48)
-#=> #<Car:0x00007fccd2985f48...>
+#=> #<"Toyota Prius">
 
 pry(main)> car_3 = Car.new("Toyota Tercel", 500, 48)
 #=> #<Car:0x00007fccd383c2d0...>
@@ -170,7 +126,7 @@ pry(main)> car_1 = Car.new("Ford Mustang", 1500, 36)
 #=> #<Car:0x00007fccd29b5720...>
 
 pry(main)> car_2 = Car.new("Toyota Prius", 1000, 48)
-#=> #<Car:0x00007fccd2985f48...>
+#=> #<"Toyota Prius">
 
 pry(main)> car_3 = Car.new("Toyota Tercel", 500, 48)
 #=> #<Car:0x00007fccd383c2d0...>
@@ -190,11 +146,11 @@ pry(main)> dealership.average_price_of_car
 #=> "39,000"
 
 pry(main)> dealership.cars_sorted_by_price
-#=> [#<Car:0x00007fccd383c2d0...>, #<Car:0x00007fccd297dc30...>, #<Car:0x00007fccd2985f48...>, #<Car:0x00007fccd29b5720...>]
+#=> [#<Car:0x00007fccd383c2d0...>, #<Car:0x00007fccd297dc30...>, #<"Toyota Prius">, #<Car:0x00007fccd29b5720...>]
 
 pry(main)> dealership.inventory_hash
 #=> {"Ford"=> [#<Car:0x00007fccd29b5720...>],
-"Toyota"=> [#<Car:0x00007fccd2985f48...>, #<Car:0x00007fccd383c2d0...>],
+"Toyota"=> [#<"Toyota Prius">, #<Car:0x00007fccd383c2d0...>],
 "Chevrolet"=> [#<Car:0x00007fccd297dc30...>]}
 
 ```
