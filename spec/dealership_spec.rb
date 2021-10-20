@@ -8,6 +8,7 @@ describe Dealership do
     @car_1 = Car.new("Ford Mustang", 1500, 36)
     @car_2 = Car.new("Toyota Prius", 1000, 48)
     @car_3 = Car.new("Ford Focus", 2000, 24)
+    @car_4 = Car.new("Ford Pinto", 2000, 1)
   end
 
   describe "#initialize" do
@@ -64,4 +65,22 @@ describe Dealership do
     end
   end
 
+  describe 'average_price_of_car' do
+    it 'calculates average vehicle price' do
+      @dealership_1.add_car(@car_1)
+      @dealership_1.add_car(@car_2)
+      @dealership_1.add_car(@car_3)
+      expect(@dealership_1.average_price_of_car).to eq(50000)
+    end
+  end
+
+  describe '#cars_sorted_by_price' do
+    it 'sorts cars by price' do
+      @dealership_1.add_car(@car_1)
+      @dealership_1.add_car(@car_2)
+      @dealership_1.add_car(@car_3)
+      @dealership_1.add_car(@car_4)
+      # expect(@dealership.cars_sorted_by_price[0].model).to eq('Pinto')
+    end
+  end
 end

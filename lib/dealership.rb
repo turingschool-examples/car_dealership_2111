@@ -33,4 +33,12 @@ class Dealership
     dealership_info['total_value'] = self.total_value
     dealership_info
   end
+
+  def average_price_of_car
+    self.total_value / @count
+  end
+
+  def cars_sorted_by_price
+    @inventory.sort {|car| car.total_cost}
+  end
 end
