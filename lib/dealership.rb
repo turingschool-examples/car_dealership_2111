@@ -18,4 +18,29 @@ class Dealership
     @inventory.push(car)
     return nil
   end
+
+  def has_inventory?
+    @inventory.length >= 1
+  end
+
+  def cars_by_make(make)
+    @inventory.find_all do |car|
+      make == car.make
+    end
+  end
+
+  def total_value
+    total_value = 0
+    @inventory.each do |car|
+      total_value += car.total_cost
+    end
+    total_value
+  end
+
+  def details
+    {
+      "total_value" => self.total_value,
+      "address" => self.address
+    }
+  end
 end
