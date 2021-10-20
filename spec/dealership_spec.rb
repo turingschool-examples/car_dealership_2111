@@ -41,4 +41,15 @@ describe Dealership do
     end
   end
 
+  describe ' #has_inventory?' do
+    it 'truns true if inventory is not empty, false if empty' do
+      dealership = Dealership.new("Acme Auto", "123 Main Street")
+      expect(dealership.has_inventory?).to eq(false)
+      dealership.add_car(@car_1)
+      expect(dealership.has_inventory?).to eq(true)
+      dealership.add_car(@car_2)
+      expect(dealership.has_inventory?).to eq(true)
+    end
+  end
+
 end
