@@ -34,4 +34,9 @@ class Dealership
   def average_price_of_car
     (total_value / inventory.size).to_s.insert(-4, ",")
   end
+  # 
+  # def cars_sorted_by_price
+  #   @inventory.sort_by do |car|
+  #     car.total_cost
+  # end
 end
