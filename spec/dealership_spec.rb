@@ -52,4 +52,16 @@ RSpec.describe Dealership do
       expect(@dealership.cars_by_make('Ford')).to eq([@car_1])
     end
   end
+
+  # Begin Iteration 4
+  describe '#average_price_of_car' do
+    it 'averages the price of all the cars in inventory' do
+      @dealership.add_car(@car_1)
+      @dealership.add_car(@car_2)
+      @dealership.add_car(@car_3)
+      @dealership.add_car(@car_4)
+
+      expect(@dealership.average_price_of_car).to eq("39,000")
+    end
+  end
 end
