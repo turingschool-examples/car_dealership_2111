@@ -3,30 +3,36 @@ require './lib/car'
 class Dealership
   attr_reader :name, :address, :inventory
 
+  # initialize
   def initialize(name, address)
     @name = name
     @address = address
     @inventory = []
   end
 
+  #add car
   def add_car(car)
     @inventory << car
   end
 
+  # check inventory
   def inventory_count
     @inventory.count
   end
 
+  # check if inventory is 0 or not
   def has_inventory?
     inventory_count > 0
   end
 
+  # return an array of cars of specified make. allow any inventory to be used.
   def cars_by_make(make, inventory)
     inventory.find_all do |car|
       car.make == make
     end
   end
 
+  # return total value
   def total_value
     @inventory.map do |car|
       car.total_cost
