@@ -18,4 +18,8 @@ class Car
   def total_cost
     @monthly_payment * @loan_length
   end
+
+  def paint!(color)
+    @color = color
+  end
 end
