@@ -6,9 +6,13 @@ class Dealership
     @name = name
     @address = address
     @inventory = []
-    @inventory_count = @inventory.count
+    @inventory_count = 0
   end
 
+  def add_car(car)
+    @inventory << car
+    @inventory_count = @inventory.length
+  end
 
 
 
