@@ -21,8 +21,8 @@ class Dealership
     inventory_count > 0
   end
 
-  def cars_by_make(make)
-    @inventory.find_all do |car|
+  def cars_by_make(make, inventory)
+    inventory.find_all do |car|
       car.make == make
     end
   end
@@ -64,10 +64,14 @@ class Dealership
     end
     return makes.sort
   end
+
   # def inventory_hash
   #   # gather all makes
-  #
+  #   makes = get_makes
   #   hash = Hash.new()
-  #   for @inventory
+  #   #cycle through each make, sort by car price, and add to hash.
+  #   makes.each do |make|
+  #     @inventory.cars_by_make(make).sort
+  #   end
   # end
 end

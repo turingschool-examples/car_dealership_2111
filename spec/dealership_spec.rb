@@ -64,8 +64,8 @@ describe Dealership do
 
   describe ' #cars_by_make' do
     it 'returns only cars of specified make from inventory' do
-      expect(@dealership.cars_by_make("Toyota")).to eq([@car_2, @car_3])
-      expect(@dealership.cars_by_make("Ford")).to eq([@car_1])
+      expect(@dealership.cars_by_make("Toyota", @dealership.inventory)).to eq([@car_2, @car_3])
+      expect(@dealership.cars_by_make("Ford", @dealership.inventory)).to eq([@car_1])
     end
   end
 
