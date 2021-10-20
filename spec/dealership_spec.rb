@@ -26,4 +26,12 @@ describe Dealership do
      dealership.add_car(car_2)
      expect(dealership.inventory).to eq([car_1,car_2])
    end
+   it '#add_car adds cars to inventory' do
+     dealership = Dealership.new("Acme Auto", "123 Main Street")
+     car_1 = Car.new("Ford Mustang", 1500, 36)
+     car_2 = Car.new("Toyota Prius", 1000, 48)
+     dealership.add_car(car_1)
+     dealership.add_car(car_2)
+     expect(dealership.inventory_count).to eq(2)
+   end
 end
