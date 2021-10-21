@@ -79,18 +79,23 @@ RSpec.describe 'dealership Spec Harness' do
       @dealership.add_car(@car_4)
     end
 
-    it "7. Dealership #cars_by_make" do
+    it "7. Dealership #has_inventory?" do
+      expect(@dealership).to respond_to(:has_inventory?).with(0).argument
+      expect(@dealership.has_inventory?).to eq(false)
+    end
+
+    it "8. Dealership #cars_by_make" do
       expect(@dealership).to respond_to(:cars_by_make).with(1).argument
       expect(@dealership.cars_by_make("Toyota")).to eq([@car_2, @car_3])
       expect(@dealership.cars_by_make("Ford")).to eq([@car_1])
     end
 
-    it "8. Dealership #total_value" do
+    it "9. Dealership #total_value" do
       expect(@dealership).to respond_to(:total_value).with(0).argument
       expect(@dealership.total_value).to eq(156000)
     end
 
-    it "9. Dealership #details" do
+    it "10. Dealership #details" do
       expect(@dealership).to respond_to(:details).with(0).argument
       expected = {
         "total_value" => 156000,
@@ -109,17 +114,17 @@ RSpec.describe 'dealership Spec Harness' do
       @dealership.add_car(@car_4)
     end
 
-    it "10. Dealership #average_price_of_car" do
+    it "11. Dealership #average_price_of_car" do
       expect(@dealership).to respond_to(:average_price_of_car).with(0).argument
       expect(@dealership.average_price_of_car).to eq("39,000")
     end
 
-    it "11. Dealership #cars_sorted_by_price" do
+    it "12. Dealership #cars_sorted_by_price" do
       expect(@dealership).to respond_to(:cars_sorted_by_price).with(0).argument
       expect(@dealership.cars_sorted_by_price).to eq([@car_3, @car_4, @car_2, @car_1])
     end
 
-    it "12. Dealership #inventory_hash" do
+    it "13. Dealership #inventory_hash" do
       expect(@dealership).to respond_to(:inventory_hash).with(0).argument
       expect(@dealership.inventory_hash).to have_key("Ford")
       expect(@dealership.inventory_hash).to have_key("Toyota")
