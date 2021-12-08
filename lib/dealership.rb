@@ -26,10 +26,9 @@ class Dealership
   end
 
   def total_value
-    sum = inventory.map do |car|
+    inventory.sum do |car|
       car.total_cost
     end
-    sum.sum
   end
 
   def details
