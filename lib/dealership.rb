@@ -1,11 +1,12 @@
 class Dealership
-  attr_reader :name, :address, :inventory, :inventory_count
+  attr_reader :name, :address, :inventory, :inventory_count, :dealership_value
 
   def initialize(name, address)
     @name = name
     @address = address
     @inventory = []
     @inventory_count = 0
+    @dealership_value = 0
   end
 
   def add_car(car)
@@ -23,6 +24,13 @@ class Dealership
     end
   end
 
+  def total_value_helper
+    @inventory.map do |car|
+      car.total_cost
+    end
+  end
 
-
+  def total_value
+    total_value_helper.sum
+  end
 end
