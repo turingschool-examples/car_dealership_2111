@@ -10,8 +10,10 @@ RSpec.describe Dealership do
   end
 
   it 'has no inventory to start' do
-    expect(dealership.inventory).to be([])
-    expect(dealership.inventory_count).to be(0)
+    dealership = Dealership.new("Acme Auto", "123 Main Street")
+
+    expect(dealership.inventory).to eq([])
+    expect(dealership.inventory_count).to eq(0)
   end
 
   it 'adds cars' do
@@ -21,8 +23,8 @@ RSpec.describe Dealership do
     dealership.add_car(car_1)
     dealership.add_car(car_2)
 
-    expect(dealership.inventory).to be([car_1, car_2])
-    expect(dealership.inventory_count).to be(2)
+    expect(dealership.inventory).to eq([car_1, car_2])
+    expect(dealership.inventory_count).to eq(2)
   end
 
 end
