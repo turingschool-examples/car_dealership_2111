@@ -24,6 +24,11 @@ class Dealership
     @inventory.find_all do |car|
       car.make == make
     end
+  end
 
+  def total_value
+    @inventory.sum do |car|
+      car.total_cost
+    end
   end
 end
