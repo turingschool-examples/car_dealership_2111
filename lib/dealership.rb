@@ -1,3 +1,4 @@
+require 'pry'
 class Dealership
   attr_reader :inventory
   def initialize(argument_1, argument_2)
@@ -17,5 +18,23 @@ class Dealership
   def has_inventory?
     @inventory = []
       false
+  end
+
+  def cars_by_make(make)
+    car_make = []
+    @inventory.each do |car|
+      if car.make == make
+        car_make << car
+      end
+    end
+    car_make
+  end
+
+  def total_value
+    total = []
+    @inventory.each do |car|
+      total << car.total_cost
+    end
+    total.sum
   end
 end
