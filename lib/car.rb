@@ -18,6 +18,10 @@ class Car
     @loan
   end
 
+  def total_cost
+    @loan * monthly_payment
+  end
+
 
 
 
