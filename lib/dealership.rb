@@ -15,4 +15,11 @@ class Dealership
   def inventory_count
     @inventory_count = @inventory.length
   end
+
+  def has_inventory?
+    if @inventory_count < 2
+      return false
+    end
+  end
+
 end

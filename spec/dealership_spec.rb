@@ -42,4 +42,14 @@ RSpec.describe Dealership do
 
     expect(dealership.inventory_count).to eq(2)
   end
+
+  it 'has multiple cars in inventory' do
+    dealership = Dealership.new("Acme Auto", "123 Main Street")
+    car_1 = Car.new("Ford Mustang", 1500, 36)
+    dealership.add_car(car_1)
+
+
+    expect(dealership.has_inventory?).to eq(false)
+  end
+
 end
