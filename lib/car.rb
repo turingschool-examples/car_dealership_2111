@@ -17,4 +17,8 @@ class Car
     return @name[1]
   end
 
+  def total_cost
+    return loan_length * monthly_payment
+  end
+
 end
