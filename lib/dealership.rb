@@ -29,4 +29,11 @@ class Dealership
       total_value += car.total_cost
     end
   end
+
+  def details
+    @details = Hash.new
+    @details["total_value"] = self.total_value
+    @details['address'] = @address
+    @details
+  end
 end
