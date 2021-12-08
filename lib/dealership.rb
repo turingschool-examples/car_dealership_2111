@@ -4,10 +4,15 @@ class Dealership
     @name = name
     @address = address
     @inventory = []
-    @inventory_count = 0
+
+  end
+
+  def inventory_count
+    @inventory.count 
   end
 
   def add_car(car)
     @inventory << car
   end
+#require'pry'; binding.pry
 end
