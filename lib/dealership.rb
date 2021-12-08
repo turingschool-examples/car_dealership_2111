@@ -33,4 +33,8 @@ class Dealership
   def total_value
     total_value_helper.sum
   end
+
+  def details
+    details_hash = Hash["total_value"=>total_value, "address"=> address]
+  end
 end
