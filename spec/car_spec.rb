@@ -4,13 +4,11 @@ require './lib/car'
 RSpec.describe Car do
   it 'exists' do
     car = Car.new("Ford Mustang", 1500, 36)
-
     expect(car).to be_an_instance_of(Car)
   end
 
-  xit 'has a make' do
+  it 'has a make' do
     car = Car.new("Ford Mustang", 1500, 36)
-
     expect(car.make).to eq("Ford")
   end
 
