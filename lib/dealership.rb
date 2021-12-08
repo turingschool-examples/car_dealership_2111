@@ -33,6 +33,15 @@ class Dealership
     return @cars_by_make
   end
 
+  def total_value
+    value=0
+
+    @inventory.each do |car|
+      value += car.total_cost
+    end
+    return value
+  end
+
 
 
 end
