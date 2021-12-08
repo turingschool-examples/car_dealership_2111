@@ -27,4 +27,15 @@ class Dealership
      p false
     end
   end
+
+  def cars_by_make(make)
+    make.count(make)
+  end
+
+  def total_value
+    inventory_value = []
+    @inventory.each do |total_cost|
+      inventory_value << total_cost
+    end
+  end
 end
