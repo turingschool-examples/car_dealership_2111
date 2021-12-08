@@ -15,4 +15,8 @@ class Dealership
   def add_car(car)
     @inventory << car
   end
+
+  def has_inventory?
+     @inventory.size > 1
+  end
 end
