@@ -70,6 +70,7 @@ describe Dealership do
     car_3 = Car.new("Toyota Tercel", 500, 48)
     car_4 = Car.new("Chevrolet Bronco", 1250, 24)
     dealership.add_car(car_1)
+    expect(dealership.total_value).to eq(54000)
     dealership.add_car(car_2)
     dealership.add_car(car_3)
     dealership.add_car(car_4)
