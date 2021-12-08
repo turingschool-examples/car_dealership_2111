@@ -6,4 +6,9 @@ class Dealership
     @location = location
     @inventory = []
   end
+
+  def inventory_count
+    @inventory.size
+  end
+  
 end
