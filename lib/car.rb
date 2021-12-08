@@ -15,7 +15,7 @@ class Car
   end
   @total_cost
 
-  
+
   def color
   end
 
