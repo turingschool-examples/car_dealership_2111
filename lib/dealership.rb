@@ -13,5 +13,11 @@ class Dealership
     @inventory_count += 1
   end
 
+  def has_inventory?
+    @inventory_count > 0
+  end
+
+  def cars_by_make(arg)
+  end 
 
 end
