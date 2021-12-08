@@ -33,5 +33,5 @@ class Dealership
    end
  end
 
-  def
+#  def
 end
