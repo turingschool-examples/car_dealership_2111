@@ -35,8 +35,11 @@ RSpec.describe Dealership do
 
   it 'can tell if there is no inventory' do
     dealership = Dealership.new("Acme Auto", "123 Main Street")
-
     expect(dealership.has_inventory?).to be(false)
+
+    car_1 = Car.new("Ford Mustang", 1500, 36)
+    dealership.add_car(car_1)
+    expect(dealership.has_inventory?).to be(true)
   end
 
   it 'can return cars by make' do
