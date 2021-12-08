@@ -39,5 +39,11 @@ class Dealership
     details["address"] = @location
     details
   end
-
+#iteration_4
+  def average_price_of_car
+    average = total_value / inventory_count
+    average_str = average.to_s
+    output = average_str.insert(2, ",")
+    output
+  end
 end
