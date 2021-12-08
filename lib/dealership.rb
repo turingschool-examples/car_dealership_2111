@@ -46,4 +46,15 @@ class Dealership
       "address" => @address
     }
   end
+
+  def average_price_of_car
+      average = total_value / inventory_count
+      return average
+  end
+
+  def cars_sorted_by_price
+    @inventory.each do |sort|
+      inventory.sort_by(sort.total_cost)
+    end
+  end
 end
