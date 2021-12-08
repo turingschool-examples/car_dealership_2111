@@ -50,14 +50,23 @@ RSpec.describe Dealership do
     it 'can return the total value of all cars in inventory' do
       expect(@dealership.total_value). to be 156000
       expect(@dealership.total_value).to be_instance_of Integer
-
     end
 
     it 'can return its details (total value, address) in a hash' do
       expect(@dealership.details).to eq({"total_value" => 156000, "address" => "123 Main Street"})
       expect(@dealership.details).to be_instance_of Hash
     end
+
+    it 'can return the average price of a car' do
+      expect(@dealership.average_price_of_car).to be_instance_of String
+      expect(@dealership.average_price_of_car).to eq "39,000"
+    end
+
+    it 'can return a hash of cars in inventory by make' do
+      expect(@dealership.inventory_hash).to be_instance_of Hash
+      expect(@dealership.inventory_hash).to eq({"Ford"=> [@car_1],
+"Toyota"=> [@car_2, @car_3],
+"Chevrolet"=> [@car_4]})
+    end
   end
-
-
 end
