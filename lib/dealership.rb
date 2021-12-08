@@ -50,13 +50,9 @@ class Dealership
   end
 
   def cars_sorted_by_price
-    prices = []
-    inventory.each do |car|
-      prices << @price
+    inventory.sort_by do |car|
+      car.total_cost
     end
-
-
-
   end
 
   def inventory_hash
@@ -66,7 +62,4 @@ class Dealership
     end
     inventory_hash
   end
-
-
-
 end

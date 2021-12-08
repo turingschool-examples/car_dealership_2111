@@ -112,7 +112,6 @@ RSpec.describe Dealership do
     dealership.add_car(car_4)
 
     expect(dealership.average_price_of_car).to eq("39,000")
-
   end
 
   it "can sort cars by price" do
@@ -127,10 +126,7 @@ RSpec.describe Dealership do
     dealership.add_car(car_3)
     dealership.add_car(car_4)
 
-    expect(dealership.cars_sorted_by_price[0].price).to eq(500)
-    expect(dealership.cars_sorted_by_price[1].price).to eq(1000)
-    expect(dealership.cars_sorted_by_price[2].price).to eq(1250)
-    expect(dealership.cars_sorted_by_price[3].price).to eq(1500)
+    expect(dealership.cars_sorted_by_price).to eq([car_3, car_4, car_2, car_1])
   end
 
   it "can return a hash of the full inventory" do
@@ -148,8 +144,4 @@ RSpec.describe Dealership do
     expect(dealership.inventory_hash.keys).to eq(["Ford", "Toyota", "Chevrolet"])
 
   end
-
-
-
-
 end
