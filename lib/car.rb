@@ -3,13 +3,17 @@ class Car
 
   def initialize(name, payment, loan_length)
     @name = name,
-    @payment = payment,
+    @monthly_payment = payment,
     @loan_length = loan_length
   end
 
   def make
-    make_temp = []
     make = name[0].split(" ")
     make.first
+  end
+
+  def model
+    model = name[0].split(" ")
+    model.last
   end
 end

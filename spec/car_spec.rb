@@ -14,17 +14,17 @@ RSpec.describe Car do
     expect(car.make).to eq("Ford")
   end
 
-  # it 'has a model' do
-  #   car = Car.new("Ford Mustang", 1500, 36)
+  it 'has a model' do
+    car = Car.new("Ford Mustang", 1500, 36)
+
+    expect(car.model).to eq("Mustang")
+  end
   #
-  #   expect(car.model).to eq("Mustang")
-  # end
-  #
-  # it 'has a monthly payment' do
-  #   car = Car.new("Ford Mustang", 1500, 36)
-  #
-  #   expect(car.monthly_payment).to eq(1500)
-  # end
+  it 'has a monthly payment' do
+    car = Car.new("Ford Mustang", 1500, 36)
+
+    expect(car.monthly_payment).to eq(1500)
+  end
   #
   # it 'has a loan length' do
   #   car = Car.new("Ford Mustang", 1500, 36)
