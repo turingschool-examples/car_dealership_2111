@@ -14,5 +14,8 @@ class Car
     @car.split.last
   end
 
+  def loan_length
+    @loan_length
+  end
 
 end
