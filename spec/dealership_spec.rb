@@ -140,6 +140,7 @@ RSpec.describe Dealership do
         "Toyota" => [car_2, car_3],
         "Chevrolet" => [car_4]
     }
+  
     expect(dealership.inventory_hash).to eq(expected)
   end
 end
