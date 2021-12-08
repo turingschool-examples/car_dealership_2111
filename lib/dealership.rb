@@ -1,3 +1,5 @@
+require './lib/car'
+
 class Dealership
   attr_reader :name, :addy, :inventory
   def initialize(name, addy)
@@ -21,5 +23,26 @@ class Dealership
       return true
     end
   end
+
+  def cars_by_make(type)
+    return @inventory.make(type)
+  end
+
+  def total_value
+    @total = []
+    @inventory.each do |value|
+    @total << value.total_cost
+    return @total
+    end
+  end
+
+  def details
+    @detals = {}
+    @detals[total_value]
+    @detals[@addy]
+    return @details
+  end
+
+
 
 end
