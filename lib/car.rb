@@ -19,6 +19,10 @@ class Car
 
   end
 
+  def model
+    make_and_model_split = make_and_model.split()
+    model = make_and_model_split[1]
 
+  end
 
 end
