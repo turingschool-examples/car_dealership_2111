@@ -12,5 +12,10 @@ class Car
     make_and_model[0]
   end
 
+  def model
+    make_and_model = @type.split(" ")
+    make_and_model[1]
+  end
+
 
 end
