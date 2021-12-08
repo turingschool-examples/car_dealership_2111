@@ -7,6 +7,9 @@ RSpec.describe Dealership do
   before(:each) do
     @car_1 = Car.new("Ford Mustang", 1500, 36)
     @car_2 = Car.new('Toyota Prius', 1000, 48)
+    @car_3 = Car.new("Toyota Tercel", 500, 48)
+    @car_4 = Car.new("Chevrolet Bronco", 1250, 24)
+
     @dealership = Dealership.new('Acme Auto', '123 Main Street')
   end
 
@@ -28,33 +31,27 @@ RSpec.describe Dealership do
   end
 
   it 'will sort cars by make' do
-    car_3 = Car.new("Toyota Tercel", 500, 48)
-    car_4 = Car.new("Chevrolet Bronco", 1250, 24)
     @dealership.add_car(@car_1)
     @dealership.add_car(@car_2)
-    @dealership.add_car(car_3)
-    @dealership.add_car(car_4)
-    expect(@dealership.cars_by_make('Toyota')).to eq([@car_2, car_3])
+    @dealership.add_car(@car_3)
+    @dealership.add_car(@car_4)
+    expect(@dealership.cars_by_make('Toyota')).to eq([@car_2, @car_3])
     expect(@dealership.cars_by_make('Ford').length).to eq(1)
   end
 
   it 'will return the total value of dealership' do
-    car_3 = Car.new("Toyota Tercel", 500, 48)
-    car_4 = Car.new("Chevrolet Bronco", 1250, 24)
     @dealership.add_car(@car_1)
     @dealership.add_car(@car_2)
-    @dealership.add_car(car_3)
-    @dealership.add_car(car_4)
+    @dealership.add_car(@car_3)
+    @dealership.add_car(@car_4)
     expect(@dealership.total_value).to eq(156000)
   end
 
   it 'will return details of dealership in hash of form {location => total_value}' do
-    car_3 = Car.new("Toyota Tercel", 500, 48)
-    car_4 = Car.new("Chevrolet Bronco", 1250, 24)
     @dealership.add_car(@car_1)
     @dealership.add_car(@car_2)
-    @dealership.add_car(car_3)
-    @dealership.add_car(car_4)
+    @dealership.add_car(@car_3)
+    @dealership.add_car(@car_4)
     @dealership.total_value
     expect(@dealership.details).to eq({"total_value" => 156000, "address" => "123 Main Street"})
   end
