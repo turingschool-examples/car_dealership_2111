@@ -1,5 +1,6 @@
 class Dealership
-  attr_reader :dealership
+  attr_reader :dealership, :address, :inventory,
+  :inventory_count
   def initialize(dealership, address)
     @dealership = dealership
     @address = address
