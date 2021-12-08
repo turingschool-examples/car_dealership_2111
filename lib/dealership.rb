@@ -24,4 +24,11 @@ class Dealership
       car.make == make
     end
   end
+
+  def total_value
+    sum = inventory.map do |car|
+      car.total_cost
+    end
+    sum.sum
+  end
 end

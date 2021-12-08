@@ -48,7 +48,7 @@ RSpec.describe Dealership do
     expect(dealership.cars_by_make('Ford')).to eq([car_1])
   end
 
-  xit "has the total value of it's inventroy" do
+  it "has the total value of it's inventroy" do
     dealership = Dealership.new('Acme Auto', '123 Main Street')
     car_1 = Car.new('Ford Mustang', 1500, 36)
     car_2 = Car.new('Toyota Prius', 1000, 48)
@@ -59,7 +59,7 @@ RSpec.describe Dealership do
     dealership.add_car(car_3)
     dealership.add_car(car_4)
     expect(dealership.cars_by_make('Toyota')).to eq([car_2, car_3])
-    expect(dealership.total_value).to eq(15_600)
+    expect(dealership.total_value).to eq(156_000)
   end
 
   xit 'has deatils' do
