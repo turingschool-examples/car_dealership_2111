@@ -52,4 +52,8 @@ class Dealership
     @lot_value / inventory_count
   end
 
+  def cars_sorted_by_price
+    @inventory.sort_by{ |car| car.total_cost_of_car }
+  end
+
 end
