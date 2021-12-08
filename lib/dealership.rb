@@ -47,4 +47,12 @@ class Dealership
       car.total_cost
     end
   end
+
+  def inventory_hash
+    inventory_hash = Hash.new { |hash, key| hash[key] = [] }
+    @inventory.each do |car|
+      inventory_hash[car.make] << car
+    end
+    inventory_hash
+  end
 end
