@@ -18,7 +18,7 @@ RSpec.describe Car do
     expect(car.model).to eq("Mustang")
   end
 
-  xit 'has a monthly payment' do
+  it 'has a monthly payment' do
     car = Car.new("Ford Mustang", 1500, 36)
 
     expect(car.monthly_payment).to eq(1500)
