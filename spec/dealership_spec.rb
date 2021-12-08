@@ -27,4 +27,15 @@ RSpec.describe Dealership do
     expect(@dealership.has_inventory?).to be(true)
   end
 
+  it 'will sort cars by make' do
+    car_3 = Car.new("Toyota Tercel", 500, 48)
+    car_4 = Car.new("Chevrolet Bronco", 1250, 24)
+    @dealership.add_car(@car_1)
+    @dealership.add_car(@car_2)
+    @dealership.add_car(car_3)
+    @dealership.add_car(car_4)
+    expect(@dealership.cars_by_make('Toyota')).to eq([@car_2, car_3])
+    expect(@dealership.cars_by_make('Ford').length).to eq(1)
+  end
+
 end
