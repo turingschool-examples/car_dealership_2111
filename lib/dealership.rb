@@ -46,4 +46,8 @@ class Dealership
     avg.to_s.insert(-4, ',')
   end
 
+  def cars_sorted_by_price
+    @inventory.sort_by { |car| car.total_cost }    
+  end
+
 end
