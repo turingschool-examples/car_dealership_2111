@@ -17,5 +17,8 @@ class Car
     make_and_model[1]
   end
 
-
+  def total_cost
+    @monthly_payment * @loan_length
+  end
+  
 end
