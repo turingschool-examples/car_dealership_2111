@@ -47,7 +47,14 @@ class Dealership
   end
 
   def cars_sorted_by_price
-    @inventory.sort_by { |car| car.total_cost }    
+    @inventory.sort_by { |car| car.total_cost }
   end
 
+  def inventory_hash
+    inv_hash = {}
+    inv_hash["Ford"] = cars_by_make("Ford")
+    inv_hash["Toyota"] = cars_by_make("Toyota")
+    inv_hash["Chevrolet"] = cars_by_make("Chevrolet")
+    inv_hash
+  end
 end
