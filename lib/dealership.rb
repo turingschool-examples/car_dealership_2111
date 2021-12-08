@@ -56,4 +56,13 @@ class Dealership
     @inventory.sort_by{ |car| car.total_cost_of_car }
   end
 
+  def inventory_hash
+    makes = ['Ford', 'Toyota', 'Chevrolet']
+    lot_hash = {}
+    makes.each do |make|
+      lot_hash[make] = cars_by_make(make)
+    end
+    return lot_hash
+  end
+
 end
