@@ -4,6 +4,7 @@ class Dealership
     @name = name
     @address = address
     @inventory = []
+
   end
 
   def inventory_count
@@ -38,5 +39,11 @@ class Dealership
       total_value += car.total_cost
     end
     total_value
+  end
+  def details
+    details = {
+      "total_value" => total_value,
+      "address" => @address
+    }
   end
 end
