@@ -16,4 +16,8 @@ class Car
     model = name[0].split(" ")
     model.last
   end
+
+  def total_cost
+    total = monthly_payment * loan_length
+  end
 end
