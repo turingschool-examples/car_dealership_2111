@@ -37,4 +37,24 @@ RSpec.describe Car do
 
     expect(car.total_cost).to eq(54000)
   end
+
+  it 'has a color' do
+    car = Car.new("Ford Mustang", 1500, 36)
+
+    expect(car.color).to be(nil)
+  end
+
+#  it 'can paint it' do
+#    car = Car.new("Ford Mustang", 1500, 36)
+#    car.paint!(:blue)
+
+#    expect(car.paint!(:blue)).to be(true)
+#  end
+
+  it 'is a color' do
+    car = Car.new("Ford Mustang", 1500, 36)
+    car.paint!(:blue)
+
+    expect(car.color).to be(:blue)
+  end
 end
