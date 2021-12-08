@@ -38,4 +38,11 @@ class Dealership
       total_value: total_value
     }
   end
+
+  def average_price_of_car
+    average = inventory.map do |car|
+      car.total_cost
+    end
+    average.sum / inventory.count
+  end
 end
