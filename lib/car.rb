@@ -11,4 +11,10 @@ class Car
     @name = @name.split(" ")
     return @name[0]
   end
+
+  def model
+    @name = @name.split(" ")
+    return @name[1]
+  end
+
 end
