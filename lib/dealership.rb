@@ -5,4 +5,12 @@ class Dealership
     @address = address
     @inventory = []
   end
+
+  def inventory_count
+    @inventory.count
+  end
+
+  def add_car(car)
+    @inventory << car
+  end
 end
