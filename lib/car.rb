@@ -16,5 +16,8 @@ class Car
     @vehicle.split(" ").last
   end
 
+  def paint!(paint_color)
+    @color = paint_color
+  end
 
 end
