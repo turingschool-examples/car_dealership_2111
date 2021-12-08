@@ -11,5 +11,7 @@ class Dealership
     !@inventory.empty?
   end
 
-
+  def add_car(car)
+    @inventory << car
+  end
 end

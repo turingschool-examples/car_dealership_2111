@@ -18,8 +18,19 @@ RSpec.describe Dealership do
     expect(@dealership.has_inventory?).to be false
   end
 
-  xit 'can add cars to inventory' do
+  describe '#add_car' do
+    before(:each) do
+      @dealership.add_car(@car_1)
+      @dealership.add_car(@car_2)
+      @dealership.add_car(@car_3)
+      @dealership.add_car(@car_4)
+    end
+
+    it 'can add cars to inventory' do
+      expect(@dealership.has_inventory?).to be true
+    end
   end
+
 
   xit 'can return cars by make' do
   end
