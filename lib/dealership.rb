@@ -5,6 +5,7 @@ class Dealership
   @name = name
   @address = address
   @inventory = []
+  @total_value = 0
   end
 
   def inventory_count
@@ -26,5 +27,16 @@ class Dealership
     end
     end
   end
+
+  def details
+    details = Hash.new { |hash, key| hash[key] }
+    @inventory.each do |car|
+      @total_value += car.total_cost
+      details["total_value"] = @total_value
+      details["address"] = @address
+    end
+     return details
+  end
+
 
 end
