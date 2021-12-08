@@ -11,8 +11,12 @@ class Dealership
   def inventory_count
     @inventory.size
   end
-  
+
   def add_car(car)
     @inventory << car
+  end
+
+  def has_inventory?
+    @inventory.size > 0 ? true : false 
   end
 end
