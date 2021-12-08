@@ -31,7 +31,14 @@ class Dealership
       cost_per_car << current_car.total_cost
     end
     cost_per_car.each {|total| sum+=total }
-    sum 
+    sum
+  end
+
+  def details
+    details_hash = {}
+    details_hash["total_value"] = total_value
+    details_hash["address"] = @address
+    details_hash
   end
 
 end
