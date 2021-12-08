@@ -54,8 +54,8 @@ RSpec.describe Dealership do
     dealership.add_car(car_4)
 
     expect(dealership.cars_by_make("Toyota").size).to be(2)
-    expect(dealership.cars_by_make("Toyota")[0].make).to eq("Toyota")
-    expect(dealership.cars_by_make("Toyota")[1]).make.to eq("Toyota")
+    expect(dealership.cars_by_make("Toyota").first.make).to eq("Toyota")
+    expect(dealership.cars_by_make("Toyota").last.make).to eq("Toyota")
   end
 
   it 'can return total_value' do
