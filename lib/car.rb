@@ -1,8 +1,8 @@
 class Car
-  attr_reader :vehicle
-  def initialize(vehicle, price, months)
+  attr_reader :vehicle, :monthly_payment
+  def initialize(vehicle, cost, months)
   @vehicle = vehicle
-  @price = price
+  @monthly_payment = cost
   @months = months
   end
 
@@ -13,4 +13,5 @@ class Car
   def model
     @vehicle.split(" ").last
   end
+
 end
