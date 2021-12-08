@@ -23,6 +23,8 @@ RSpec.describe Dealership do
 
   it 'will return if it has inventory in a boolean' do
     expect(@dealership.has_inventory?).to be(false)
+    @dealership.add_car(@car_1)
+    expect(@dealership.has_inventory?).to be(true)
   end
 
 end
