@@ -1,7 +1,13 @@
 class Dealership
-  def initialize(inventory, inventory_count)
-    @inventory = inventory
-    @inventory_count = inventory_count
+  attr_reader :name, :address, :inventory
+  def initialize(name, address)
+    @name = name
+    @address = address
+    @inventory = []
   end
-    
+
+  def inventory_count
+    @inventory.count
+  end 
+
 end
