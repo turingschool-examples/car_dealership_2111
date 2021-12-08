@@ -48,4 +48,8 @@ class Dealership
     return details_hash
   end
 
+  def average_price_by_car
+    @lot_value / inventory_count
+  end 
+
 end
