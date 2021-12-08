@@ -1,10 +1,11 @@
 class Car
-  attr_reader :type, :monthly_payment, :loan_length
+  attr_reader :type, :monthly_payment, :loan_length, :color
 
   def initialize(type, monthly_payment, loan_length)
     @type = type
     @monthly_payment = monthly_payment
     @loan_length = loan_length
+    @color = nil
   end
 
   def make
@@ -21,8 +22,8 @@ class Car
     @monthly_payment * @loan_length
   end
 
-  def color
-    @color = nil
+  def paint!(color)
+    @color = color
   end
-  
+
 end
