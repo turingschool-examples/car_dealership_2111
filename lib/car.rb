@@ -6,7 +6,8 @@ class Car
     @payments = monthly_payment
     @loan = loan_length
     #require 'pry'; binding.pry
-
+    @model = type.split[1]
+    #require 'pry'; binding.pry
   end
 
 
