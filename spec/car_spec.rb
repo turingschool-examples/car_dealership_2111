@@ -48,6 +48,6 @@ RSpec.describe Car do
     car = Car.new("Ford Mustang", 1500, 36)
     car.paint!(:blue)
 
-    expect(car.paint!).to be(:blue)
+    expect(car.color).to be(:blue)
   end
 end
