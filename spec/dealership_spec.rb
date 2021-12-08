@@ -61,5 +61,24 @@ RSpec.describe Dealership do
       expect(car_3).to be_a(Car)
       expect(car_4).to be_a(Car)
     end
+
+    it 'can organize by make' do
+      dealership.add_car(car_1)
+      dealership.add_car(car_2)
+      dealership.add_car(car_3)
+      dealership.add_car(car_4)
+
+      expect(dealership.cars_by_make("Toyota")).to eq(2)
+    end
+
+    it 'has a total value' do
+
+      expect(dealership.total_value).to eq(156000)
+    end
+
+    it 'can access the dealership details' do
+
+      expect(dealership.details).to be({'total_value' => 156000, 'address' => "123 Main Street"})
+    end
   end
 end
