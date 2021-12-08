@@ -41,4 +41,9 @@ class Dealership
     details_hash
   end
 
+  def average_price_of_car
+    avg = total_value / @inventory.count
+    avg.to_s.insert(-4, ',')
+  end
+
 end
