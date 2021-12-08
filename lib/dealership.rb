@@ -36,4 +36,9 @@ class Dealership
     @details['address'] = @address
     @details
   end
+
+  def average_price_of_car
+    avg_price = total_value / @inventory.size
+    avg_price.to_s.insert(-4, ",")
+  end
 end
