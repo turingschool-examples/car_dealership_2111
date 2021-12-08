@@ -16,7 +16,11 @@ class Dealership
   end
 
   def has_inventory?
-    @inventory_count == 0 
+    if inventory_count == 0
+      false
+    else
+      true 
+    end
   end
 
 end
