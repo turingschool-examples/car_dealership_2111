@@ -1,3 +1,4 @@
+require 'pry'
 require 'rspec'
 require './lib/car'
 
@@ -10,7 +11,7 @@ RSpec.describe Car do
 
   it 'has a make' do
     car = Car.new("Ford Mustang", 1500, 36)
-
+# binding.pry
     expect(car.make).to eq("Ford")
   end
 
