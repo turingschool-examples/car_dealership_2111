@@ -14,6 +14,16 @@ RSpec.describe Dealership do
     expect(@dealership).to be_instance_of Dealership
   end
 
+  it 'has an inventory' do
+    expect(@dealership.inventory).to eq([])
+    expect(@dealership.inventory).to be_instance_of(Array)
+  end
+
+  it 'can return a count of its inventory' do
+    expect(@dealership.inventory_count).to be 0
+    expect(@dealership.inventory_count).to be_instance_of Integer
+  end
+
   it 'starts with no inventory' do
     expect(@dealership.has_inventory?).to be false
   end
