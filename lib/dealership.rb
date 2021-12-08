@@ -46,4 +46,9 @@ class Dealership
       "address" => @address
     }
   end
+
+  def average_price_of_car
+      average = total_value / inventory_count
+      return average
+  end
 end
