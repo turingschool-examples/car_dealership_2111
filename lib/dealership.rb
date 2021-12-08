@@ -35,5 +35,17 @@ class Dealership
   end
 
   def average_price_of_car
+    average = (total_value.to_f / inventory_count).truncate.to_s
+    average.length < 4 ? average : format_commas(average)
+  end
+
+  def format_commas(string)
+    string.insert(-4, ',')
+  end
+
+  def inventory_hash
+    inventory_hash = Hash.new{ |hash, key| hash[key] = [] }
+    @inventory.each { |car| inventory_hash[car.make] << car }
+    inventory_hash
   end
 end

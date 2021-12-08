@@ -61,5 +61,12 @@ RSpec.describe Dealership do
       expect(@dealership.average_price_of_car).to be_instance_of String
       expect(@dealership.average_price_of_car).to eq "39,000"
     end
+
+    it 'can return a hash of cars in inventory by make' do
+      expect(@dealership.inventory_hash).to be_instance_of Hash
+      expect(@dealership.inventory_hash).to eq({"Ford"=> [@car_1],
+"Toyota"=> [@car_2, @car_3],
+"Chevrolet"=> [@car_4]})
+    end
   end
 end
