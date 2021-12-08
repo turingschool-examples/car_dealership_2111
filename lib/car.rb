@@ -8,7 +8,7 @@ class Car
   end
 
   def make
-    @name.split(" ")
-    return @name
+    @name = @name.split(" ")
+    return @name[0]
   end
 end
