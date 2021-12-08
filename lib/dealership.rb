@@ -43,7 +43,30 @@ class Dealership
   end
 
   def cars_sorted_by_price
-    #they already are 
+    #they already are
     @inventory
   end
+
+  def toyota_cars_helper
+    @inventory.select do |car|
+      car.make == "Toyota"
+    end
+  end
+
+  def ford_cars_helper
+    @inventory.select do |car|
+      car.make == "Ford"
+    end
+  end
+
+  def chevy_cars_helper
+    @inventory.select do |car|
+      car.make == "Chevrolet"
+    end
+  end
+
+  def inventory_hash
+    new_hash = Hash["Toyota"=>toyota_cars_helper, "Ford"=>ford_cars_helper, "Chevrolet"=>chevy_cars_helper]
+  end
+
 end
