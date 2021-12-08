@@ -14,6 +14,10 @@ class Car
     @payments
   end
 
+  def loan_length
+    @loan
+  end
+
 
 
 
