@@ -31,4 +31,11 @@ class Dealership
     end
     sum.sum
   end
+
+  def details
+    deatils = {
+      address: address,
+      total_value: total_value
+    }
+  end
 end
