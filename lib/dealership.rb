@@ -58,4 +58,7 @@ class Dealership
     avg_price.to_s
   end
 
+  def cars_sorted_by_price
+    @inventory.sort_by(&:monthly_payment)
+  end
 end

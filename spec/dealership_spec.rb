@@ -53,6 +53,9 @@ RSpec.describe Dealership do
     dealership.add_car(car_4)
     dealership.total_value
     expect(dealership.average_price_of_car).to eq("39000")
+    expect(dealership.cars_sorted_by_price).to eq([car_3, car_2, car_4, car_1])
   end
+
+
 
 end
