@@ -19,8 +19,18 @@ class Dealership
     if inventory_count == 0
       false
     else
-      true 
+      true
     end
+  end
+
+  def cars_by_make(string)
+    cars_with_matching_make = []
+    @inventory.each do |car|
+      if car.make == string
+        cars_with_matching_make << car
+      end
+    end
+    return cars_with_matching_make
   end
 
 end
