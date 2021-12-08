@@ -22,6 +22,9 @@ class Car
     @loan * monthly_payment
   end
 
+  def color
+  end
+
 
 
 
