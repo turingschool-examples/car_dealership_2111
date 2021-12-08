@@ -8,6 +8,10 @@ class Dealership
 
   def inventory_count
     @inventory.count
+  end
+
+  def add_car(car_to_add)
+    @inventory << car_to_add
   end 
 
 end
