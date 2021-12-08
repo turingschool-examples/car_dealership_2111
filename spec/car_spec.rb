@@ -2,6 +2,9 @@ require 'rspec'
 require './lib/car'
 
 RSpec.describe Car do
+
+  let(:car) {Car.new("Ford Mustang", 1500, 36)}
+
   it 'exists' do
     car = Car.new("Ford Mustang", 1500, 36)
 
@@ -36,5 +39,13 @@ RSpec.describe Car do
     car = Car.new("Ford Mustang", 1500, 36)
 
     expect(car.total_cost).to eq(54000)
+  end
+
+  it "has color" do
+    expect(car.color).to eq([])
+  end
+
+  it "is a color of paint" do
+  expect(car.paint!).to add(:blue)
   end
 end
