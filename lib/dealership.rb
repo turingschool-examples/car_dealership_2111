@@ -5,6 +5,8 @@ class Dealership
     @name = name
     @address = address
     @inventory = []
+    @total_value = 0
+
   end
 
   def inventory_count
@@ -34,11 +36,26 @@ class Dealership
   end
 
   def total_value
-    tot_value = 0
+    @tot_value = 0
     @inventory.each do |car|
-      tot_value += car.total_cost
+      @tot_value += car.total_cost
     end
-    tot_value
+    return @tot_value
+  end
+
+  def details
+    deats = Hash.new
+    deats = { @tot_value => @address }
+  end
+
+  def average_price_of_car
+    avg_price = @tot_value / @inventory.count
+
+    # @inventory.each do |car|
+    #   avg_price += car.total_cost
+    #    avg_price= avg_price/@inventory.count
+    # end
+    avg_price.to_s
   end
 
 end

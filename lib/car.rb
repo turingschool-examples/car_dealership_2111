@@ -5,6 +5,7 @@ class Car
     @name = name,
     @monthly_payment = payment,
     @loan_length = loan_length
+    @total
   end
 
   def make
@@ -18,6 +19,6 @@ class Car
   end
 
   def total_cost
-    total = monthly_payment * loan_length
+    @total = monthly_payment * loan_length
   end
 end
