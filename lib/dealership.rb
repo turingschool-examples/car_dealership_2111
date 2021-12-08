@@ -1,10 +1,11 @@
 class Dealership
-  attr_accessor :inventory, :name, :location
+  attr_accessor :inventory, :name, :location, :lot_value
 
   def initialize(name, location)
     @name = name
     @location = location
     @inventory = []
+    @lot_value = 0
   end
 
   def inventory_count
@@ -31,6 +32,20 @@ class Dealership
       end
     end
     return cars_with_matching_make
+  end
+
+  def total_value
+    @inventory.each do |car|
+      @lot_value += car.total_cost
+    end
+    return @lot_value
+  end
+
+  def details
+    details_hash = {}
+    details_hash['total_value']= @lot_value
+    details_hash['address']= @location
+    return details_hash
   end
 
 end
