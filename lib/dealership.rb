@@ -33,4 +33,7 @@ class Dealership
       'address' => address
       }
   end
+
+  def average_price_of_car
+  end
 end
