@@ -23,6 +23,12 @@ class Dealership
     end
   end
 
+  def total_value
 
+  end
+
+  def details
+
+  end
 
 end

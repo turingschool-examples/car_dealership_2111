@@ -43,10 +43,20 @@ RSpec.describe Car do
        let (:car_4) {Car.new("Chevrolet Bronco", 1250, 24)}
 
 
-    it 'can get all cars by make' do
+    xit 'can get all cars by make' do
 
       expect(dealership.cars_by_make("Toyota")).to eq([car_2, car_3])
       expect(dealership.cars_by_make("Ford")).to eq([car_1])
+    end
+
+    xit 'can get total dealership value' do
+
+      expect(dealership.total_value).to eq(156000)
+    end
+
+    xit 'can get dealership values' do
+
+      expect(dealership.details).to eq({"total_value" => 156000, "address" => "123 Main Street"})
     end
   end
 end
