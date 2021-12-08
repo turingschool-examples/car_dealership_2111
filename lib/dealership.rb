@@ -12,6 +12,16 @@ class Dealership
 
   def add_car(car_to_add)
     @inventory << car_to_add
-  end 
+  end
+
+  def has_inventory?
+    @inventory != []
+  end
+
+  def cars_by_make(selected_make)
+    @inventory.select do |current_car|
+      current_car.make == selected_make
+    end
+  end
 
 end
