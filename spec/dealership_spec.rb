@@ -32,4 +32,11 @@ RSpec.describe Dealership do
     expect(dealership.inventory[0]).to be_a(Car)
     expect(dealership.inventory[1]).to be_a(Car)
   end
+
+  it 'can tell if there is no inventory' do
+    dealership = Dealership.new("Acme Auto", "123 Main Street")
+
+    expect(dealership.has_inventory?).to be(false)
+  end
+
 end
