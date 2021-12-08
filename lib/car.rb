@@ -1,5 +1,5 @@
 class Car
-  attr_reader :make, :model
+  attr_reader :make, :model, :payments, :loan
 
   def initialize(type, monthly_payment, loan_length)
     @make = type.split.first
@@ -8,6 +8,10 @@ class Car
     #require 'pry'; binding.pry
     @model = type.split[1]
     #require 'pry'; binding.pry
+  end
+
+  def monthly_payment
+    @payments
   end
 
 
