@@ -37,7 +37,9 @@ RSpec.describe Dealership do
     end
 
     it 'can add cars to inventory' do
+      expect(@dealership.inventory_count).to be 4
       expect(@dealership.has_inventory?).to be true
+      expect(@dealership.inventory).to eq([@car_1, @car_2, @car_3,  @car_4])
     end
 
     it 'can return cars by make' do
@@ -45,12 +47,12 @@ RSpec.describe Dealership do
       expect(@dealership.cars_by_make("Ford")).to eq([@car_1])
     end
 
-    xit 'can return the total value of all cars in inventory' do
-      dealership.total_value
+    it 'can return the total value of all cars in inventory' do
+      expect(@dealership.total_value). to be 156000
     end
 
     xit 'can return its details (total value, address) in a hash' do
-      dealership.details
+      @dealership.details
     end
   end
 
