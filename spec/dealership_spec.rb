@@ -39,6 +39,6 @@ RSpec.describe Dealership do
 
     expect(dealership.inventory_count).to eq(2)
   end
-
+#it3 start
 
 end
