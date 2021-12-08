@@ -8,10 +8,17 @@ class Car
     # @total_cost      = []
   end
 
-  # def total_cost(cost)
-  #   @total_cost      = []
-  #   # @total_cost.push(cost)
-  #   @total_cost << cost
-  # end
-  # @total_cost
+  def total_cost(cost)
+    @total_cost      = []
+    # @total_cost.push(cost)
+    @total_cost << cost
+  end
+  @total_cost
+
+  
+  def color
+  end
+
+  def paint!()
+  end
 end
