@@ -8,6 +8,9 @@ class Car
 
   def make
     @vehicle.split(" ").first
+  end
 
+  def model
+    @vehicle.split(" ").last
   end
 end
