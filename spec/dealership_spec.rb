@@ -51,8 +51,8 @@ RSpec.describe Dealership do
       expect(@dealership.total_value). to be 156000
     end
 
-    xit 'can return its details (total value, address) in a hash' do
-      @dealership.details
+    it 'can return its details (total value, address) in a hash' do
+      expect(@dealership.details).to eq({"total_value" => 156000, "address" => "123 Main Street"})
     end
   end
 
