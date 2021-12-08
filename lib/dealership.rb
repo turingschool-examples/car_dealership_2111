@@ -53,5 +53,15 @@ class Dealership
     return details_hash
   end
 
+  def average_price_of_car
+    avg_price = @total_value / (@inventory.count)
+    # return avg_price.to_s
+  end
+
+  def cars_sorted_by_price
+    sorted_cars = []
+    
+
+  end
 
 end
