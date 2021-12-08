@@ -20,6 +20,6 @@ class Car
   end
 
   def paint!(color)
-    @color = color 
+    @color = color
   end
 end
