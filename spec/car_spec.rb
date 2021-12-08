@@ -1,5 +1,6 @@
 require 'rspec'
 require './lib/car'
+require 'pry'
 
 RSpec.describe Car do
   it 'exists' do
