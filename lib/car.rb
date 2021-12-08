@@ -6,5 +6,9 @@ class Car
     @loan_length = loan_length
   end
 
+  def total_cost
+    @monthly_payment * @loan_length
+  end
+
 
 end
