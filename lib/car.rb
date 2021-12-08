@@ -10,4 +10,9 @@ class Car
     @car.split.first
   end
 
+  def model
+    @car.split.last
+  end
+
+
 end
