@@ -6,4 +6,8 @@ class Car
     @loan_length = loan_length
   end
 
+  def make
+    @car.split.first
+  end
+
 end
