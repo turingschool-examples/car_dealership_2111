@@ -22,4 +22,17 @@ class Dealership
     end
   end
 
+  def cars_by_make(make_check)
+    @cars_by_make = []
+
+    @inventory.each do |car|
+      if car.make == make_check
+        @cars_by_make << car
+      end
+    end
+    return @cars_by_make
+  end
+
+
+
 end
