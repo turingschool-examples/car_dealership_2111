@@ -41,4 +41,10 @@ class Dealership
     avg_price = total_value / @inventory.size
     avg_price.to_s.insert(-4, ",")
   end
+
+  def cars_sorted_by_price
+    @inventory.sort_by do |car|
+      car.total_cost
+    end
+  end
 end
