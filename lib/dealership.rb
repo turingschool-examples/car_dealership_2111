@@ -11,4 +11,8 @@ class Dealership
   def inventory_count
     @inventory.size
   end
+
+  def add_car(car)
+    @inventory << car
+  end
 end
