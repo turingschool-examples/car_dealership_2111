@@ -14,4 +14,8 @@ class Dealership
   def add_car(car)
     @inventory << car
   end
+
+  def cars_by_make(make)
+    @inventory.select { |car| car.make == make }
+  end
 end

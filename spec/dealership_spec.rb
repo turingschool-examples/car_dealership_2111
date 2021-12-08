@@ -29,11 +29,13 @@ RSpec.describe Dealership do
     it 'can add cars to inventory' do
       expect(@dealership.has_inventory?).to be true
     end
+
+    it 'can return cars by make' do
+      expect(@dealership.cars_by_make('Toyota')).to eq([@car_2, @car_3])
+      expect(@dealership.cars_by_make("Ford")).to eq([@car_1])
+    end
   end
 
-
-  xit 'can return cars by make' do
-  end
 
   xit 'can return the total value of all cars in inventory' do
   end
