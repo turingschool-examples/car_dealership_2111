@@ -25,5 +25,6 @@ RSpec.describe Dealership do
     dealership.add_car(car_1)
     dealership.add_car(car_2)
     expect(dealership.inventory).to eq([car_1, car_2])
+    expect(dealership.inventory_count).to eq(2)
   end
 end
