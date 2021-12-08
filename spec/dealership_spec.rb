@@ -1,6 +1,7 @@
 require 'rspec'
 require './lib/car'
 require './lib/dealership'
+require 'pry'
 
 RSpec.describe Dealership do
   before(:each) do
@@ -18,6 +19,10 @@ RSpec.describe Dealership do
     @dealership.add_car(@car_1)
     @dealership.add_car(@car_2)
     expect(@dealership.inventory_count).to eq(2)
+  end
+
+  it 'will return if it has inventory in a boolean' do
+    expect(@dealership.has_inventory?).to be(false)
   end
 
 end
