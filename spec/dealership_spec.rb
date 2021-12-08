@@ -14,7 +14,8 @@ RSpec.describe Dealership do
     expect(@dealership).to be_instance_of Dealership
   end
 
-  xit 'starts with no inventory' do
+  it 'starts with no inventory' do
+    expect(@dealership.has_inventory?).to be false
   end
 
   xit 'can add cars to inventory' do
