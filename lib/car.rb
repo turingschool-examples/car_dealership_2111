@@ -1,5 +1,7 @@
 require 'rspec'
 require './lib/car'
+require './lib/dealership'
+require 'pry'
 
 class Car
   attr_reader :make_and_model,
@@ -27,6 +29,11 @@ class Car
 
   def total_cost
     total_cost = @loan_length * @monthly_payment
+
+  end
+
+  def paint!(color)
+    @color = color
 
   end
 end

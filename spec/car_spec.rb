@@ -1,5 +1,7 @@
 require 'rspec'
 require './lib/car'
+require './lib/dealership'
+require 'pry'
 
 RSpec.describe Car do
   it 'exists' do
@@ -36,5 +38,20 @@ RSpec.describe Car do
     car = Car.new("Ford Mustang", 1500, 36)
 
     expect(car.total_cost).to eq(54000)
+  end
+
+  it "#color" do
+    car = Car.new("Ford Mustang", 1500, 36)
+
+    expect(car.color).to eq(nil)
+
+  end
+
+  it "#paint" do
+    car = Car.new("Ford Mustang", 1500, 36)
+    car.color
+    car.paint!(:blue)
+
+    expect(car.color).to eq(:blue)
   end
 end
