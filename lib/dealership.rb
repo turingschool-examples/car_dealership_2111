@@ -15,4 +15,8 @@ class Dealership
     @inventory.count
   end
 
+  def has_inventory?
+    inventory_count >= 1
+  end
+
 end
