@@ -37,4 +37,13 @@ class Dealership
   def details
     details_hash = Hash["total_value"=>total_value, "address"=> address]
   end
+
+  def average_price_of_car
+    total_value/ inventory_count
+  end
+
+  def cars_sorted_by_price
+    #they already are 
+    @inventory
+  end
 end
