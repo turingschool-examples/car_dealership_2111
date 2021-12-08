@@ -144,7 +144,6 @@ RSpec.describe Dealership do
     dealership.add_car(car_2)
     dealership.add_car(car_3)
     dealership.add_car(car_4)
-    require 'pry'; binding.pry
 
     expect(dealership.inventory_hash.keys).to eq(["Ford", "Toyota", "Chevrolet"])
 

@@ -49,15 +49,15 @@ class Dealership
     average_price.to_s.insert(-4, ",")
   end
 
-  # def cars_sorted_by_price
-  #   cars_sorted_by_price =
-  #
-  #   inventory.sort_by do |cars|
-  #     cars.each do |car|
-  #       car.price
-  #     end
-  #   end
-  # end
+  def cars_sorted_by_price
+    prices = []
+    inventory.each do |car|
+      prices << @price
+    end
+
+
+
+  end
 
   def inventory_hash
     inventory_hash = {}
