@@ -99,7 +99,7 @@ RSpec.describe Dealership do
     dealership.add_car(car_3)
     dealership.add_car(car_4)
 
-    expect(average_price_of_car).to eq("39,000")
+    expect(dealership.average_price_of_car).to eq("39,000")
   end
 
   it 'sorts by price' do
@@ -115,8 +115,8 @@ RSpec.describe Dealership do
 
     expect(dealership.cars_sorted_by_price.size).to eq(4)
     expect(dealership.cars_sorted_by_price[0].model).to eq("Tercel")
-    expect(dealership.cars_sorted_by_price[1].model).to eq("Prius")
-    expect(dealership.cars_sorted_by_price[2].model).to eq("Bronco")
+    expect(dealership.cars_sorted_by_price[1].model).to eq("Bronco")
+    expect(dealership.cars_sorted_by_price[2].model).to eq("Prius")
     expect(dealership.cars_sorted_by_price[3].model).to eq("Mustang")
   end
 
