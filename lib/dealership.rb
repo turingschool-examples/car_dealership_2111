@@ -33,4 +33,11 @@ class Dealership
     total_value
   end
 
+  def details
+    details = {}
+    details["total_value"] = total_value
+    details["address"] = @location
+    details
+  end
+
 end
