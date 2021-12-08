@@ -10,5 +10,6 @@ RSpec.describe Dealership do
 
   it 'dealerships initially have no inventory' do
     expect(@dealership.inventory).to eq([])
+    expect(@dealership.inventory_count).to eq(0)
   end
 end
