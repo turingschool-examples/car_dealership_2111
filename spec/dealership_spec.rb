@@ -34,7 +34,7 @@ RSpec.describe Dealership do
     expect(dealership.has_inventory?).to be false
   end
 
-  xit 'knows the cars by thier make' do
+  it 'knows the cars by thier make' do
     dealership = Dealership.new('Acme Auto', '123 Main Street')
     car_1 = Car.new('Ford Mustang', 1500, 36)
     car_2 = Car.new('Toyota Prius', 1000, 48)
