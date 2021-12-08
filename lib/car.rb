@@ -1,7 +1,8 @@
 class Car
   attr_reader :name,
               :monthly_payment,
-              :loan_length
+              :loan_length,
+              :make
 
   def initialize(name, monthly_payment, loan_length)
     @name = name
