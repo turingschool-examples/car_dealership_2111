@@ -27,4 +27,14 @@ RSpec.describe Dealership do
     expect(dealership.inventory).to eq([car_1, car_2])
     expect(dealership.inventory_count).to eq(2)
   end
+
+  it 'returns boolean based on inventory value' do
+    dealership = Dealership.new("Acme Auto", "123 Main Street")
+    car_1 = Car.new("Ford Mustang", 1500, 36)
+    car_2 = Car.new("Toyota Prius", 1000, 48)
+    expect(dealership.has_inventory?).to be false
+    dealership.add_car(car_1)
+    dealership.add_car(car_2)
+    expect(dealership.has_inventory?).to be true
+  end
 end
