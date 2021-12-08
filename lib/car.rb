@@ -1,5 +1,5 @@
 class Car
-  attr_reader :make, :model, :payments, :loan
+  attr_reader :make, :model, :payments, :loan, :color
 
   def initialize(type, monthly_payment, loan_length)
     @make = type.split.first
@@ -7,6 +7,7 @@ class Car
     @loan = loan_length
     #require 'pry'; binding.pry
     @model = type.split[1]
+    @color = nil
     #require 'pry'; binding.pry
   end
 
@@ -21,9 +22,13 @@ class Car
   def total_cost
     @loan * monthly_payment
   end
+#require 'pry'; binding.pry
+  def paint!(color)
+      @color = color
 
-  def color
   end
+
+
 
 
 
