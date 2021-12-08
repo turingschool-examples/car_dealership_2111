@@ -38,12 +38,15 @@ class Dealership
   end
 
   def details
-    details = {
-
-    }
+    details = {}
     details["total_value"] = total_value
     details["address"] = @address
-    details 
+    details
+  end
+
+  def average_price_of_car
+    average_price = total_value / inventory_count
+    average_price.to_s.insert(-4, ",")
   end
 
 end
