@@ -32,9 +32,13 @@ class Dealership
 
   def total_value
     total = []
-    @inventory.each do |car|
+    @inventory.find_all do |car|
       total << car.total_cost
     end
     total.sum
+  end
+
+  def average_price_of_car
+    (total_value / (@inventory.size))
   end
 end
