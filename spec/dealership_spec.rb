@@ -133,9 +133,10 @@ RSpec.describe Dealership do
 
     expect(dealership.inventory_hash).to be_a(Hash)
     expect(dealership.inventory_hash.keys).to eq(["Ford", "Toyota", "Chevrolet"])
-    expect(dealership.inventory_hash.values[0]).to be_a(Car)
-    expect(dealership.inventory_hash.values[1]).to be_a(Car)
-    expect(dealership.inventory_hash.values[2]).to be_a(Car)
-    expect(dealership.inventory_hash.values[3]).to be_a(Car)
+    expect(dealership.inventory_hash.values.flatten.size).to eq(4)
+    expect(dealership.inventory_hash.values.flatten[0]).to be_a(Car)
+    expect(dealership.inventory_hash.values.flatten[1]).to be_a(Car)
+    expect(dealership.inventory_hash.values.flatten[2]).to be_a(Car)
+    expect(dealership.inventory_hash.values.flatten[3]).to be_a(Car)
   end
 end
