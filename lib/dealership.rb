@@ -45,4 +45,10 @@ class Dealership
     end
     average.sum / inventory.count
   end
+
+  def cars_sorted_by_price
+    inventory.sort_by do |car|
+      car.total_cost
+    end
+  end
 end

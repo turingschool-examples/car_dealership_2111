@@ -91,7 +91,7 @@ RSpec.describe Dealership do
     expect(dealership.average_price_of_car).to eq(39_000)
   end
 
-  xit 'sorts cars by price' do
+  it 'sorts cars by price' do
     dealership = Dealership.new('Acme Auto', '123 Main Street')
     car_1 = Car.new('Ford Mustang', 1500, 36)
     car_2 = Car.new('Toyota Prius', 1000, 48)
@@ -101,8 +101,7 @@ RSpec.describe Dealership do
     dealership.add_car(car_2)
     dealership.add_car(car_3)
     dealership.add_car(car_4)
-    expect(dealership.cars_sorted_by_price).to eq([car_3])
-    require 'pry'
-    binding.pry
+
+    expect(dealership.cars_sorted_by_price).to eq([car_3, car_4, car_2, car_1])
   end
 end
