@@ -1,8 +1,15 @@
 class Car
-  attr_accessor :name, :model, :monthly_payment
-  def initialize(name, model, monthly_payment)
+  attr_accessor :name, :monthly_payment, :loan_length, :make, :model
+  def initialize(name, monthly_payment, loan_length)
     @name = name
-    @model = model
     @monthly_payment = monthly_payment
+    @loan_length = loan_length
+    @make = @name.split(' ').first
+    @model = @name.split(' ').last
+  end
+
+  def total_cost
+    @monthly_payment * @loan_length
   end 
+
 end
