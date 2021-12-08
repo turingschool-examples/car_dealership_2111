@@ -17,7 +17,7 @@ RSpec.describe Dealership do
     expect(dealership.inventory_count).to eq(0)
   end
 
-  xit 'has an new inventory and count ' do
+  it 'has an new inventory and count ' do
     dealership = Dealership.new('Acme Auto', '123 Main Street')
     car_1 = Car.new('Ford Mustang', 1500, 36)
     car_2 = Car.new('Toyota Prius', 1000, 48)
