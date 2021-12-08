@@ -115,7 +115,7 @@ RSpec.describe Dealership do
 
   end
 
-  xit "can sort cars by price" do
+  it "can sort cars by price" do
     dealership = Dealership.new("Acme Auto", "123 Main Street")
     car_1 = Car.new("Ford Mustang", 1500, 36)
     car_2 = Car.new("Toyota Prius", 1000, 48)
@@ -127,13 +127,13 @@ RSpec.describe Dealership do
     dealership.add_car(car_3)
     dealership.add_car(car_4)
 
-    expect(dealership.cars_sorted_by_price[0]).to eq()
-    expect(dealership.cars_sorted_by_price[1]).to eq()
-    expect(dealership.cars_sorted_by_price[2]).to eq()
-    expect(dealership.cars_sorted_by_price[3]).to eq()
+    expect(dealership.cars_sorted_by_price[0].price).to eq(500)
+    expect(dealership.cars_sorted_by_price[1].price).to eq(1000)
+    expect(dealership.cars_sorted_by_price[2].price).to eq(1250)
+    expect(dealership.cars_sorted_by_price[3].price).to eq(1500)
   end
 
-  xit "can return a hash of the full inventory" do
+  it "can return a hash of the full inventory" do
     dealership = Dealership.new("Acme Auto", "123 Main Street")
     car_1 = Car.new("Ford Mustang", 1500, 36)
     car_2 = Car.new("Toyota Prius", 1000, 48)
@@ -144,6 +144,7 @@ RSpec.describe Dealership do
     dealership.add_car(car_2)
     dealership.add_car(car_3)
     dealership.add_car(car_4)
+    require 'pry'; binding.pry
 
     expect(dealership.inventory_hash.keys).to eq(["Ford", "Toyota", "Chevrolet"])
 
