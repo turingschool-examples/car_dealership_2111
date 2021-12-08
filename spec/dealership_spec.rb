@@ -14,4 +14,18 @@ RSpec.describe Dealership do
     expect(@dealership).to be_instance_of Dealership
   end
 
+  xit 'starts with no inventory' do
+  end
+
+  xit 'can add cars to inventory' do
+  end
+
+  xit 'can return cars by make' do
+  end
+
+  xit 'can return the total value of all cars in inventory' do
+  end
+
+  xit 'can return its details (total value, address) in a hash' do
+  end
 end
