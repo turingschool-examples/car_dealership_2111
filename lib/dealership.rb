@@ -40,7 +40,13 @@ class Dealership
   end
 
   def format_commas(string)
-    string.insert(-4, ',')
+    string.length.times do |i|
+      next if i.zero?
+      next unless (i % 4).zero?
+
+      string = string.insert(-i, ',')
+    end
+    string
   end
 
   def inventory_hash
