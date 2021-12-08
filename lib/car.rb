@@ -21,4 +21,11 @@ class Car
     return loan_length * monthly_payment
   end
 
+  # def color
+  #   @color = nil
+  # end
+  #
+  # def paint!
+  # end
+
 end
