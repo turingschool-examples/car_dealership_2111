@@ -16,30 +16,29 @@ class Dealership
   end
 
   def has_inventory?
-    if @inventory.count > 0
-      true
-    else
-      false
-    end
+  @inventory.count > 0
   end
 
   def cars_by_make(make)
-    cars_by_make = []
-     @inventory.each do |car|
-       if car.make == make
-         cars_by_make << car
-        end
-     end
-     return cars_by_make
+      @inventory.find_all{|car| car.make == make}
+      #cars_by_make = []
+     #@inventory.each do |car|
+      # if car.make == make
+      #   cars_by_make << car
+      #  end
+     #end
+     #return cars_by_make
   end
 
   def total_value
-    total_value = 0
-    @inventory.each do |car|
-      total_value += car.total_cost
-    end
-    total_value
+    @inventory.map { |car| car.total_cost}.sum
+    #total_value = 0
+    #@inventory.each do |car|
+  #  total_value += car.total_cost
+  #  end
+  #  total_value
   end
+
   def details
     details = {
       "total_value" => total_value,
@@ -48,13 +47,11 @@ class Dealership
   end
 
   def average_price_of_car
-      average = total_value / inventory_count
-      return average
+       (total_value / inventory_count).to_s.insert(-4, ",")
+
   end
 
   def cars_sorted_by_price
-    @inventory.each do |sort|
-      inventory.sort_by(sort.total_cost)
-    end
+    inventory.sort_by{|car| car.total_cost}
   end
 end
