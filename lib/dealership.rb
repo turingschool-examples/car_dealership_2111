@@ -1,5 +1,5 @@
 class Dealership
-  attr_reader :name, :address, :inventory, :car
+  attr_reader :name, :address, :inventory
 
   def initialize(name, address)
     @name = name
@@ -16,7 +16,7 @@ class Dealership
   end
 
   def has_inventory?
-    return false if inventory.count == 0
+    !(inventory_count == 0)
   end
 
   def cars_by_make(make)
@@ -32,9 +32,9 @@ class Dealership
   end
 
   def details
-    deatils = {
-      address: address,
-      total_value: total_value
+    details = {
+      'total_value' => total_value,
+      'address' => address
     }
   end
 
@@ -42,12 +42,26 @@ class Dealership
     average = inventory.map do |car|
       car.total_cost
     end
-    average.sum / inventory.count
+
+    format_number((average.sum / inventory.count))
+  end
+
+  def format_number(number)
+    num_groups = number.to_s.chars.to_a.reverse.each_slice(3)
+    num_groups.map(&:join).join(',').reverse
   end
 
   def cars_sorted_by_price
     inventory.sort_by do |car|
       car.total_cost
     end
+  end
+
+  def inventory_hash
+    hash = {}
+    inventory.map do |car|
+      hash[car.make] = cars_by_make(car.make)
+    end
+    hash
   end
 end
